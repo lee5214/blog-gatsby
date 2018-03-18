@@ -8,7 +8,6 @@ const IndexPage = ({data}) => {
 			<h1>Hi people</h1>
 			<p>Welcome to your new Gatsby site.</p>
 			<p>Now go build something great.</p>
-			<Link to="/page-2/">Go to page 2</Link>
 			{ posts.map ((post) => {
 				return (
 					<li key={ post.node.id }>
@@ -23,7 +22,7 @@ const IndexPage = ({data}) => {
 	);
 };
 
-export const pageQuery = graphql`
+export const listQuery = graphql`
     query IndexQuery {
         allMarkdownRemark(
             filter: {frontmatter: {published: {eq: true }}}

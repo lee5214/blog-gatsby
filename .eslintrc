@@ -541,9 +541,12 @@
     "quote-props": 0,
     // 强制使用一致的反勾号、双引号或单引号
     "quotes": [
-      1,
+      2,
       "single",
-      "avoid-escape"
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true // allow backtick
+      }
     ],
     // 要求使用 JSDoc 注释
     "require-jsdoc": 0,

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import Header from '../components/Header';
+import Sidebar from '../components/Sidebar'
 import './index.css';
+import 'prismjs/themes/prism-tomorrow.css';
 
 const TemplateWrapper = ({children}) => (
 	<div>
@@ -11,10 +13,12 @@ const TemplateWrapper = ({children}) => (
 			title="Gatsby Default Starter"
 			meta={ [
 				{name : 'description', content : 'Sample'},
-				{name : 'keywords', content : 'sample, something'},
+				{name : 'keywords', content : 'gatsby,gatsbyjs,react,redux,'},
 			] }
 		/>
+
 		<Header/>
+		<Sidebar/>
 		<div
 			style={ {
 				margin : '0 auto',
