@@ -3,7 +3,7 @@ path: '/How-to-use-gatsby-to-create-my-blog-1'
 title: 'How to use gatsby to create my blog #1' 
 published: true
 date: 01-01-2018
-tag: [Gatsby, React, Redux, GraphQL, Styled Component, Markdown, Netlify]
+tags: [Gatsby, React, Redux, GraphQL, Styled Component, Markdown, Netlify]
 ---
 
 I'm a big fan of react ecosystem and I always want to create my own blog to share and record some learning experience, so this is it.    
@@ -97,7 +97,7 @@ This header for all posts in markdown is called `frontmatter`, it provides detai
  
 #### Create post template
 Gatsby already set up the basic functions such as routing under the hood, so that we don't need to do those things again.
-To generate a static page, just create a component file in `src/pages`, it will be served at `domain/[file-name]`.
+To generate a static page, just create a component file in `src/pages`, it will be served on `domain/[file-name]`.
 To create pages based on these markdown files dynamically, a template is needed as `src/template/post.js`.  
 
 ```javascript{5,9,16-23}
@@ -170,11 +170,12 @@ To let plugins to create pages, config in gatsby-node.js is needed.
         });
     };
 ```
----
-## GraphQL
+Now the page should be showing on `domain/[file-path]`
 
-
-
+#### Create post list in index
+To get a list of posts, it's similar as what we did above. Use graphql in `pages/index.js` to query the list of post info, then pass into a 
+component as props.
+  
 ---
 
 ## Style
@@ -225,4 +226,8 @@ in `src/templates/post.js`
     // replace <p> with the new wrapper
     <MDContentWrapper dangerouslySetInnerHTML={ {__html : post.html} }/>
 ```  
+
+## End
+This is what I get from the first day learning Gatsby / GraphQL, will write another post once I understand more deeply.
+The code repo here [Github](https://github.com/lee5214/blog-gatsby)
 
