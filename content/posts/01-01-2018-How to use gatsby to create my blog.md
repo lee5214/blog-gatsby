@@ -226,6 +226,7 @@ in `src/templates/post.js`
     // replace <p> with the new wrapper
     <MDContentWrapper dangerouslySetInnerHTML={ {__html : post.html} }/>
 ```  
+---
 
 ## End
 This is what I get from the first day learning Gatsby / GraphQL, will write another post once I understand more deeply.

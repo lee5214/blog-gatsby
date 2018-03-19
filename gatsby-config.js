@@ -20,10 +20,16 @@ module.exports = {
 			},
 		},
 		{
+			resolve : `gatsby-plugin-typography`,
+			options : {
+				pathToConfigModule : `src/utils/typography.js`,
+			},
+		},
+		{
 			resolve : `gatsby-source-filesystem`,
 			options : {
 				name : `pages`,
-				path : `${__dirname}/src/pages/posts`,
+				path : `${__dirname}/content/posts`,
 			},
 		},
 	],

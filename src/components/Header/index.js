@@ -11,21 +11,20 @@ const HeaderContainer = styled.div`
 	max-width : 960px;
 	padding : 1.45rem 1.0875rem;
 `;
-
+const LogoContainer = styled.div`
+	color : white;
+	text-decoration : none;
+	max-width: 100px;
+`;
 const Header = () => (
 	<HeaderWrapper>
 		<HeaderContainer>
 			<h1 style={ {margin : 0} }>
-				<Link
-					to="/"
-					style={ {
-						color : 'white',
-						textDecoration : 'none',
-					} }
-				>
-					CongLi's Blog
-					<img src={ '/static/logo_face.png' }/>
-				</Link>
+				<LogoContainer>
+					<Link to="/">
+						<img src={ '/static/logo_face.png' }/>
+					</Link>
+				</LogoContainer>
 			</h1>
 		</HeaderContainer>
 		<nav>
