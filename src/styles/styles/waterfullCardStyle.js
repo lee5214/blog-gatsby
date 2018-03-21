@@ -37,10 +37,11 @@ const statsCardStyle = {
 		textAlign : 'right',
 		paddingTop : '10px',
 		padding : '15px 20px',
+		margin: '30px',
 	},
 	cardIcon : {
-		width : '80px',
-		height : '80px',
+		width : '40px',
+		height : '40px',
 		fill : '#fff',
 	},
 	cardAvatar : {
@@ -55,7 +56,8 @@ const statsCardStyle = {
 	cardTitle : {
 		margin : '0',
 		...defaultFont,
-		fontSize : '1.625em',
+		fontSize : '1.425em',
+		fontWeight : '600',
 	},
 	cardTitleSmall : {
 		fontSize : '65%',

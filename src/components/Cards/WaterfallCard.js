@@ -56,6 +56,9 @@ function StatsCard ({...props}) {
 						statText
 					) : null }
 				</div>
+				<div>
+				{props.children}
+				</div>
 			</CardActions>
 		</Card>
 	);
@@ -67,6 +70,7 @@ StatsCard.defaultProps = {
 };
 
 StatsCard.propTypes = {
+	children : PropTypes.object,
 	classes : PropTypes.object.isRequired,
 	icon : PropTypes.func.isRequired,
 	iconColor : PropTypes.oneOf ([ 'orange', 'green', 'red', 'blue', 'purple' ]),

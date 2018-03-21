@@ -22,18 +22,21 @@ const IndexPage = ({data}) => {
 					<ItemGrid xs={ 12 } sm={ 6 } md={ 6 } key={ post.node.id }>
 						<WaterfallCard
 							icon={logosList[`${post.node.frontmatter.about}`]}
-							iconColor='orange'
-							title={ post.node.frontmatter.title }
-							description='49/50'
+							iconColor='blue'
+							title={ post.node.frontmatter.date }
+							description={ post.node.frontmatter.title }
 							small='GB'
 							statIcon={ Warning }
 							statIconColor='danger'
 							statLink={ {text : 'Get More Space...', href : '#pablo'} }
-						/>
+						>
+							{post.node.frontmatter.tags.map(tag => (
+								<div>{tag}</div>
+							))}
+						</WaterfallCard>
 
 						<Link to={ post.node.frontmatter.path }
 						>
-							<h1>{ post.node.frontmatter.title }</h1>
 						</Link>
 					</ItemGrid>
 
@@ -55,7 +58,9 @@ export const listQuery = graphql`
                     frontmatter{
                         path
                         title
+	                    date
 	                    about
+	                    tags
                     }
                 }
             }
