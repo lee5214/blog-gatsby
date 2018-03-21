@@ -1,24 +1,45 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { withStyles } from 'material-ui/styles';
+import Grid from 'material-ui/Grid';
+import ItemGrid from '../components/Grid/ItemGrid';
+import WaterfallCard from '../components/Cards/WaterfallCard';
+import { ContentCopy, Warning } from 'material-ui-icons';
+import {ReactIcon, GatsbyIcon, BabelIcon} from '../assets/svg/logos'
+import appStyle from '../styles/styles/appStyle';
 
+const logosList = {
+	'React': ReactIcon,
+	'Babel': BabelIcon,
+	'Gatsby': GatsbyIcon,
+}
 const IndexPage = ({data}) => {
 	const {edges : posts} = data.allMarkdownRemark;
 	return (
-		<div>
-			<h1>Hi people</h1>
-			<p>Welcome to your new Gatsby site.</p>
-			<p>Now go build something great.</p>
+		<Grid container>
 			{ posts.map ((post) => {
 				return (
-					<li key={ post.node.id }>
+					<ItemGrid xs={ 12 } sm={ 6 } md={ 6 } key={ post.node.id }>
+						<WaterfallCard
+							icon={logosList[`${post.node.frontmatter.about}`]}
+							iconColor='orange'
+							title={ post.node.frontmatter.title }
+							description='49/50'
+							small='GB'
+							statIcon={ Warning }
+							statIconColor='danger'
+							statLink={ {text : 'Get More Space...', href : '#pablo'} }
+						/>
+
 						<Link to={ post.node.frontmatter.path }
 						>
 							<h1>{ post.node.frontmatter.title }</h1>
 						</Link>
-					</li>
+					</ItemGrid>
+
 				);
 			}) }
-		</div>
+		</Grid>
 	);
 };
 
@@ -34,6 +55,7 @@ export const listQuery = graphql`
                     frontmatter{
                         path
                         title
+	                    about
                     }
                 }
             }
@@ -41,4 +63,4 @@ export const listQuery = graphql`
     }
 `;
 
-export default IndexPage;
+export default withStyles (appStyle) (IndexPage);

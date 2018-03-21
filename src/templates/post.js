@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const BlogFront = styled.div`
+const DetailFront = styled.div`
 	border: 1px solid black;
 	padding: 1rem;
 	margin-bottom: 1rem;
@@ -24,11 +24,9 @@ const Tag = styled.span`
 `;
 export default function Template ({data}) {
 	const {markdownRemark : post} = data;
-	console.log (post.frontmatter.tags);
-
 	return (
 		<div>
-			<BlogFront>
+			<DetailFront>
 				<h1>{ post.frontmatter.title }</h1>
 				<p>{ post.frontmatter.date }</p>
 				<TagContainer>
@@ -38,7 +36,7 @@ export default function Template ({data}) {
 						),
 					) }
 				</TagContainer>
-			</BlogFront>
+			</DetailFront>
 			<MDContentWrapper dangerouslySetInnerHTML={ {__html : post.html} }/>
 		</div>
 	);

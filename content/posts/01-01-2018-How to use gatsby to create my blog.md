@@ -3,6 +3,7 @@ path: '/How-to-use-gatsby-to-create-my-blog-1'
 title: 'How to use gatsby to create my blog #1' 
 published: true
 date: 01-01-2018
+about: 'Gatsby'
 tags: [Gatsby, React, Redux, GraphQL, Styled Component, Markdown, Netlify]
 ---
 

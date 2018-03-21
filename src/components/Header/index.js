@@ -1,9 +1,11 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
+import Button from 'material-ui/Button';
 
 const HeaderWrapper = styled.div`
-	background : #000000;
+	background : ${props => props.bgImage ? `url(${props.bgImage})` : 'black' } 50% 50% no-repeat;
+	background-size: cover;
 	margin-bottom : 1.45rem;
 `;
 const HeaderContainer = styled.div`
@@ -11,29 +13,32 @@ const HeaderContainer = styled.div`
 	max-width : 960px;
 	padding : 1.45rem 1.0875rem;
 `;
-const LogoContainer = styled.div`
-	color : white;
-	text-decoration : none;
-	max-width: 100px;
-`;
+const HeaderNav = styled.nav`
+	margin: 0 auto;
+	max-width: 960px;
+	text-align: right;
+`
 const Header = () => (
-	<HeaderWrapper>
+
+	<HeaderWrapper bgImage>
 		<HeaderContainer>
-			<h1 style={ {margin : 0} }>
-				<LogoContainer>
-					<Link to="/">
-						<img src={ '/static/logo_face.png' }/>
-					</Link>
-				</LogoContainer>
-			</h1>
 		</HeaderContainer>
-		<nav>
-			<Link to={ '/' }>Home</Link>
-		</nav>
-		<nav>
-			<Link to={ '/about' }>About</Link>
-		</nav>
+		<HeaderNav>
+			<Button>
+				<Link to={ '/' }>Home</Link>
+			</Button>
+			<Button color="inherit">
+				<Link to={ '/about' }
+				      activeStyle={ {
+					      color : 'red',
+				      } }
+				>
+					About
+				</Link>
+			</Button>
+		</HeaderNav>
 	</HeaderWrapper>
 );
+
 
 export default Header;
