@@ -19,6 +19,8 @@ import {
 	roseColor,
 	successColor,
 	warningColor,
+	whiteCardHeader,
+	blackCardHeader,
 } from '../styles';
 
 const statsCardStyle = {
@@ -33,6 +35,8 @@ const statsCardStyle = {
 	redCardHeader,
 	blueCardHeader,
 	purpleCardHeader,
+	whiteCardHeader,
+	blackCardHeader,
 	cardContent : {
 		textAlign : 'right',
 		paddingTop : '10px',

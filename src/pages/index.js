@@ -9,9 +9,18 @@ import {ReactIcon, GatsbyIcon, BabelIcon} from '../assets/svg/logos'
 import appStyle from '../styles/styles/appStyle';
 
 const logosList = {
-	'React': ReactIcon,
-	'Babel': BabelIcon,
-	'Gatsby': GatsbyIcon,
+	'React': {
+		icon:ReactIcon,
+		bgColor: 'blue'
+	},
+	'Babel': {
+		icon:BabelIcon,
+		bgColor: 'green'
+	},
+	'Gatsby': {
+		icon:GatsbyIcon,
+		bgColor: 'purple'
+	},
 }
 const IndexPage = ({data}) => {
 	const {edges : posts} = data.allMarkdownRemark;
@@ -21,11 +30,11 @@ const IndexPage = ({data}) => {
 				return (
 					<ItemGrid xs={ 12 } sm={ 6 } md={ 6 } key={ post.node.id }>
 						<WaterfallCard
-							icon={logosList[`${post.node.frontmatter.about}`]}
-							iconColor='blue'
+							icon={logosList[`${post.node.frontmatter.about}`].icon}
+							iconColor={logosList[`${post.node.frontmatter.about}`].bgColor}
 							title={ post.node.frontmatter.date }
 							description={ post.node.frontmatter.title }
-							small='GB'
+
 							statIcon={ Warning }
 							statIconColor='danger'
 							statLink={ {text : 'Get More Space...', href : '#pablo'} }

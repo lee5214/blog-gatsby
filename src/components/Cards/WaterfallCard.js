@@ -6,6 +6,7 @@ import waterfullCardStyle from '../../styles/styles/waterfullCardStyle';
 
 function StatsCard ({...props}) {
 	const {
+		children,
 		classes,
 		title,
 		description,
@@ -57,7 +58,7 @@ function StatsCard ({...props}) {
 					) : null }
 				</div>
 				<div>
-				{props.children}
+					{ props.children || null }
 				</div>
 			</CardActions>
 		</Card>
