@@ -4,7 +4,7 @@ import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
 import ItemGrid from '../components/Grid/ItemGrid';
 import WaterfallCard from '../components/Cards/WaterfallCard';
-import { BabelIcon, GatsbyIcon, GraphQLIcon, MarkdownIcon, ReactIcon, ReduxIcon } from '../assets/svg/logos';
+import { BabelIcon, GatsbyIcon, GraphQLIcon, MarkdownIcon, ReactIcon, ReduxIcon, MaterialUIIcon } from '../assets/svg/logos';
 import indexPageStyle from '../styles/indexPageStyle';
 import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
@@ -33,6 +33,10 @@ const logosList = {
 	'Markdown' : {
 		icon : MarkdownIcon,
 		bgColor : 'white',
+	},
+	'MaterialUI' : {
+		icon : MaterialUIIcon,
+		bgColor : 'black',
 	},
 };
 

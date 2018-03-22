@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import moment from 'moment';
-import {withStyles} from 'material-ui/styles'
+import { withStyles } from 'material-ui/styles';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Typography from 'material-ui/Typography';
-import sidebarStyle from '../../styles/sidebarStyle'
+import sidebarStyle from '../../styles/sidebarContentStyle';
 
 
 const SidebarContainer = styled.div`
@@ -63,46 +63,53 @@ class SidebarContent extends Component {
 			sidebarOpen : true,
 		};
 	}
-	activeRoute =(path) =>{
+
+	activeRoute = (path) => {
 		return location.pathname.indexOf (path) > -1 ? true : false;
-	}
+	};
 	createPostButton = (post) => {
 		const {classes, themeColor} = this.props;
 		return (
-			<Link to={ post.node.frontmatter.path} style={{textDecoration:'none'}}>
+			<Link to={ post.node.frontmatter.path }
+			      style={ {textDecoration : 'none'} }
+					key={`sidebarlink-${post.node.id}`}
+			>
 				<ListItem button
-				          className={`${classes.itemLink} ${this.activeRoute(post.node.frontmatter.path)?classes[themeColor]:null}`}>
-					<ListItemText
+				          className={ `${classes.itemLink} ${this.activeRoute (post.node.frontmatter.path) ? classes[themeColor] : null}` }>
+					<ListItemText className={ classes.buttonText }
 						primary={
-							<Typography type={ 'body2' }>
+							<Typography type={ 'body2' } className={ classes.buttonTextPrimary }>
 								{ post.node.frontmatter.title }
 							</Typography>
 						}
 						secondary={
-							moment (post.node.frontmatter.date, 'MM-DD-YYYY').fromNow ()
+							<span>
+								{ moment (post.node.frontmatter.date, 'MM-DD-YYYY').fromNow () }
+							</span>
+
 						}
 					/>
 				</ListItem>
-				{/*<ListItem button key={ post.node.id } to={ post.node.frontmatter.path }>
-					<ListItemText
-						primary={
-							<Typography type={ 'body2' }>
-								{ post.node.frontmatter.title }
-							</Typography>
-						}
-						secondary={
-							moment (post.node.frontmatter.date, 'MM-DD-YYYY').fromNow ()
-						}
-					/>
-				</ListItem>*/}
+				{ /*<ListItem button key={ post.node.id } to={ post.node.frontmatter.path }>
+				 <ListItemText
+				 primary={
+				 <Typography type={ 'body2' }>
+				 { post.node.frontmatter.title }
+				 </Typography>
+				 }
+				 secondary={
+				 moment (post.node.frontmatter.date, 'MM-DD-YYYY').fromNow ()
+				 }
+				 />
+				 </ListItem>*/ }
 			</Link>
 		);
 	};
 
 	render () {
-		const logo = '/static/logo_simple_black.png'
-		const content = ''
-		const {classes,posts} = this.props;
+		const logo = '/static/logo_simple_white.png';
+		const content = '';
+		const {classes, posts} = this.props;
 		return (
 			<div>
 				<div>
@@ -111,19 +118,17 @@ class SidebarContent extends Component {
 							<div className={ classes.logoImage }>
 								<img src={ logo } alt="logo" className={ classes.img }/>
 							</div>
-							{content}
+							{ content }
 						</Link>
 					</div>
 				</div>
-				<Divider style={ {width : '60%', marginLeft : '20%', background : 'black'} }/>
-				<div>
-					<List>
-						{ posts.map ((post) => this.createPostButton (post)) }
-					</List>
-				</div>
+				<Divider className={ classes.headerDivider }/>
+				<List className={classes.sidebarList}>
+					{ posts.map ((post) => this.createPostButton (post)) }
+				</List>
 			</div>
 		);
 	}
 }
 
-export default withStyles(sidebarStyle)(SidebarContent);
+export default withStyles (sidebarStyle) (SidebarContent);

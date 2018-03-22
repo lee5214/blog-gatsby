@@ -1,24 +1,15 @@
 import React, { Component } from 'react';
-import { AppBar, Drawer, Hidden, IconButton, Modal, Toolbar } from 'material-ui';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import { AppBar, Badge, Drawer, Hidden, IconButton, Modal, Tab, Tabs, Toolbar } from 'material-ui';
 import SidebarContent from './SidebarContent';
-
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
-import MenuIcon from 'material-ui-icons/Menu';
-
-const drawerWidth = 300;
-const styles = (theme) => ({
-	drawerPaper : {
-		width : drawerWidth,
-		[theme.breakpoints.up ('md')] : {
-			position : 'relative',
-		},
-	},
-	drawerMobile : {
-		width : drawerWidth,
-		background : 'white',
-	},
-});
+import HomeIcon from 'material-ui-icons/Home';
+import MenuIcon from 'material-ui-icons/Menu'
+import PersonIcon from 'material-ui-icons/Person'
+import PhoneIcon from 'material-ui-icons/Phone'
+import sidebarStyle from '../../styles/sidebarStyle';
 
 class Sidebar extends Component {
 	constructor (props) {
@@ -33,42 +24,25 @@ class Sidebar extends Component {
 	};
 
 	render () {
-		const {classes, posts, mobileOpen, handleDrawerToggle, themeColor} = this.props;
+		const {classes, posts, themeColor} = this.props;
 		return (
-			<div>
-				<AppBar className={ classes.appBar }>
-					<Toolbar>
-						<IconButton
-							color={themeColor}
-							aria-label='open drawer'
-							onClick={ this.handleDrawerToggle }
-							className={ classes.navIconHide }
-						>
-							<MenuIcon/>
-						</IconButton>
-						<Typography variant="title" color="inherit" noWrap>
-							Blog
-						</Typography>
-					</Toolbar>
-				</AppBar>
+			<div className={ classes.container }>
+
 				<Hidden mdUp>
 					<Modal
 						disableAutoFocus={ true }
 						open={ this.state.mobileOpen }
 						onClose={ this.handleDrawerToggle }
-						variant='temporary'
-						anchor='left'
-						/*classes={ {
-						 paper : classes.drawerPaper,
-						 } }*/
-						/*classes={ {paper : classes.drawerPaper} }*/
-						/*ModalProps={ {
-						 hideBackdrop : true,
-						 keepMounted : true, // Better open performance on mobile.
-						 } }*/
+						// variant='temporary'
+						// anchor='left'
+						// classes={ {paper : classes.drawerPaper} }
+						// ModalProps={ {
+						//  hideBackdrop : true,
+						//  keepMounted : true, // Better open performance on mobile.
+						//  } }
 					>
-						<div className={ classes.drawerMobile }>
-							<SidebarContent posts={ posts } themeColor={themeColor}/>
+						<div className={ classes.drawerPaper }>
+							<SidebarContent posts={ posts } themeColor={ themeColor }/>
 						</div>
 					</Modal>
 				</Hidden>
@@ -76,12 +50,17 @@ class Sidebar extends Component {
 					< Drawer variant='permanent' open
 					         classes={ {paper : classes.drawerPaper} }
 					>
-						<SidebarContent posts={ posts } themeColor={themeColor}/>
+						<SidebarContent posts={ posts } themeColor={ themeColor }/>
 					</Drawer>
 				</Hidden>
 			</div>
 		);
 	}
-};
+}
 
-export default withStyles (styles) (Sidebar);
+Sidebar.propTypes = {
+	classes : PropTypes.object.isRequired,
+	posts : PropTypes.array.isRequired,
+	themeColor : PropTypes.string,
+};
+export default withStyles (sidebarStyle) (Sidebar);
