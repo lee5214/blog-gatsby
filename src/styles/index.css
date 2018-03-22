@@ -7,7 +7,9 @@ html {
 body {
     margin: 0;
 }
-
+a:hover{
+    text-decoration: none !important;
+}
 article,
 aside,
 details,

@@ -70,7 +70,7 @@ class IndexPage extends Component {
 										<Grid container className={ classes.tagGrid }>
 											{ /*<div className={ classes.row }>*/ }
 											{ post.node.frontmatter.tags.map ((tag) => (
-												<Grid item xs={ 'auto' } key={ `${post.node.id}${tag}` }>
+												<Grid item key={ `${post.node.id}${tag}` }>
 													<Avatar
 														alt={ tag }
 														className={ classes.tagAvatar }
