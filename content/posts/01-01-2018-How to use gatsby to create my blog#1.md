@@ -1,10 +1,15 @@
 ---
 path: '/How-to-use-gatsby-to-create-my-blog-1'  
-title: 'How to use gatsby to create my blog #1' 
+title: 'Build dynamic blog with Gatsby #1' 
 published: true
 date: 01-01-2018
 about: 'Gatsby'
-tags: [Gatsby, React, Redux, GraphQL, Styled Component, Markdown, Netlify]
+tags: [Gatsby, React, Redux, GraphQL, Markdown]
+snippet : "I'm a big fan of react ecosystem and I always want to create my own blog to share and record some learning experience, so this is it.    
+          Gatsby is a super fast static sit generator which let React users to scaffold out a static site in 'React way'.  
+          How it works? At building phase, its SSR allows us to render dynamic components into static html content then serve.  
+          With all the benefits from both dynamic and static site, it became my first choice.   
+          In this post, I will cover some basic use of Gatsby / React / Redux / GraphQL / Styled Component / Markdown / Netlify."
 ---
 
 I'm a big fan of react ecosystem and I always want to create my own blog to share and record some learning experience, so this is it.    
@@ -13,7 +18,6 @@ How it works? At building phase, its SSR allows us to render dynamic components 
 With all the benefits from both dynamic and static site, it became my first choice.   
 In this post, I will cover some basic use of Gatsby / React / Redux / GraphQL / Styled Component / Markdown / Netlify.  
 
----
 ## Install & Config
 
 #### My current environment:

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Header from '../components/Header';
 import { withStyles } from 'material-ui/styles';
 import 'prismjs/themes/prism-tomorrow.css';
-import Sidebar from '../components/DrawerContent';
+import Sidebar from '../components/Sidebar';
 import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
@@ -15,7 +15,7 @@ import MenuIcon from 'material-ui-icons/Menu';
 import Modal from 'material-ui/Modal';
 import Typography from 'material-ui/Typography';
 //import '../styles/index.css';
-const drawerWidth = 240;
+const drawerWidth = 300;
 const styles = (theme) => ({
 	root : {
 		flexGrow : 1,
@@ -113,35 +113,9 @@ class TemplateWrapper extends Component {
 						</Typography>
 					</Toolbar>
 				</AppBar>
-				<Hidden mdUp>
-					<Modal
-						disableAutoFocus={ true }
-						/*variant='temporary'*/
-						open={ this.state.mobileOpen }
-						onClose={ this.handleDrawerToggle }
-						/*classes={ {paper : classes.drawerPaper} }*/
-						/*ModalProps={ {
-						 hideBackdrop : true,
-						 keepMounted : true, // Better open performance on mobile.
-						 } }*/
-					>
-						<div className={ classes.drawerPaper }>
-							<Sidebar posts={ posts }/>
-						</div>
-					</Modal>
-				</Hidden>
 
-				<Hidden smDown implementation='css'>
-					<Drawer
-						variant='permanent'
-						open
-						classes={ {paper : classes.drawerPaper} }
-					>
-						<div className={ classes.drawerPaper }>
-							<Sidebar posts={ posts }/>
-						</div>
-					</Drawer>
-				</Hidden>
+				<Sidebar/>
+
 				<main className={ classes.content }>
 					<div className={ classes.toolbar }/>
 
@@ -151,7 +125,6 @@ class TemplateWrapper extends Component {
 							{ this.props.children () }
 						</PostBlock>
 					</ContentContainer>
-
 				</main>
 			</div>
 		);

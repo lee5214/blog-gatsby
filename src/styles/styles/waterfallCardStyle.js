@@ -1,7 +1,3 @@
-// ##############################
-// // // StatsCard styles
-// #############################
-
 import {
 	blueCardHeader,
 	card,
@@ -21,6 +17,7 @@ import {
 	warningColor,
 	whiteCardHeader,
 	blackCardHeader,
+	defaultLink
 } from '../styles';
 
 const statsCardStyle = {
@@ -41,7 +38,7 @@ const statsCardStyle = {
 		textAlign : 'right',
 		paddingTop : '10px',
 		padding : '15px 20px',
-		margin: '30px',
+		marginTop: '30px',
 	},
 	cardIcon : {
 		width : '40px',
@@ -61,7 +58,8 @@ const statsCardStyle = {
 		margin : '0',
 		...defaultFont,
 		fontSize : '1.425em',
-		fontWeight : '600',
+		fontWeight : '400',
+		textAlign : 'left',
 	},
 	cardTitleSmall : {
 		fontSize : '65%',
@@ -112,6 +110,11 @@ const statsCardStyle = {
 		textDecoration : 'none',
 		...defaultFont,
 	},
+	cardTitleLink : {
+		color: grayColor,
+		...defaultLink,
+
+	}
 };
 
 export default statsCardStyle;

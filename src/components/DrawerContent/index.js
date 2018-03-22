@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import moment from 'moment';
-import { withTheme } from 'material-ui/styles';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Typography from 'material-ui/Typography';
@@ -15,7 +14,7 @@ const SidebarContainer = styled.div`
 	position: fixed;
 	transition: 0.25s ease-in-out;
 	top: 0;
-	width: 240px;
+	width: 300px;
 	height: 100%;
 	background: white;
 	border-right: 1px solid rgba(0, 0, 0, 0.12);
@@ -38,17 +37,14 @@ display: flex;
 flex-direction:column;
 `;
 
+const StyledListItem = styled (ListItem)`
+	width: 90%;
+	margin: 0 auto;
+`;
 const StyledListItemText = styled (ListItemText)`
+
 `;
 
-/*const styles = {
- test : {
- fontSize: '.875rem',
- marginBottom: '1rem',
- },
- };*/
-
-//
 class Sidebar extends Component {
 	constructor (props) {
 		super (props);
@@ -57,29 +53,22 @@ class Sidebar extends Component {
 		};
 	}
 
-	createPostsList = (post) => {
+	createPostButton = (post) => {
 		return (
-
-			[
-				<ListItem button key={ post.node.id }
-				          to={ post.node.frontmatter.path }
-				>
-					<Link to={ post.node.frontmatter.path }>
-						<StyledListItemText
-							primary={
-								<Typography type={ 'body2' }>
-									{ post.node.frontmatter.title }
-								</Typography>
-							}
-							secondary={
-								moment (post.node.frontmatter.date, 'MM-DD-YYYY').fromNow ()
-							}
-						/>
-					</Link>
-				</ListItem>,
-				<Divider/>,
-			]
-
+			<Link to={ post.node.frontmatter.path }>
+				<StyledListItem button key={ post.node.id }>
+					<StyledListItemText
+						primary={
+							<Typography type={ 'body2' }>
+								{ post.node.frontmatter.title }
+							</Typography>
+						}
+						secondary={
+							moment (post.node.frontmatter.date, 'MM-DD-YYYY').fromNow ()
+						}
+					/>
+				</StyledListItem>
+			</Link>
 		);
 	};
 
@@ -90,10 +79,10 @@ class Sidebar extends Component {
 				<SidebarHeader>
 					<img src={ '/static/logo_simple_black.png' }/>
 				</SidebarHeader>
-				<Divider/>
+				<Divider style={ {width : '60%', marginLeft : '20%', background : 'black'} }/>
 				<ListContainer>
-					<List dense>
-						{ posts.map ((post) => this.createPostsList (post)) }
+					<List>
+						{ posts.map ((post) => this.createPostButton (post)) }
 					</List>
 				</ListContainer>
 			</SidebarContainer>
@@ -101,4 +90,4 @@ class Sidebar extends Component {
 	}
 }
 
-export default withTheme () (Sidebar);
+export default Sidebar;

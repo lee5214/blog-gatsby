@@ -17,7 +17,6 @@
 // ##############################
 // // // Variables - Styles that are used on more than one component
 // #############################
-
 const drawerWidth = 260;
 
 const transition = {
@@ -51,6 +50,7 @@ const defaultFont = {
 	fontFamily : "'Roboto', 'Helvetica', 'Arial', sans-serif",
 	fontWeight : '300',
 	lineHeight : '1.5em',
+	color : 'rgba(0, 0, 0, 0.6)',
 };
 
 const primaryColor = '#9c27b0';
@@ -145,6 +145,13 @@ const defaultBoxShadow = {
 	transition : 'all 150ms ease 0s',
 };
 
+/**
+ * custom
+ */
+const defaultLink = {
+	color: 'rgba(0,0,0,0.6)',
+}
+
 export {
 	//variables
 	drawerWidth,
@@ -175,4 +182,6 @@ export {
 	cardActions,
 	cardHeader,
 	defaultBoxShadow,
+
+	defaultLink,
 };

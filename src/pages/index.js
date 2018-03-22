@@ -1,58 +1,105 @@
-import React from 'react';
-import Link from 'gatsby-link';
+import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
 import ItemGrid from '../components/Grid/ItemGrid';
 import WaterfallCard from '../components/Cards/WaterfallCard';
-import { ContentCopy, Warning } from 'material-ui-icons';
-import {ReactIcon, GatsbyIcon, BabelIcon} from '../assets/svg/logos'
-import appStyle from '../styles/styles/appStyle';
+import { BabelIcon, GatsbyIcon, GraphQLIcon, MarkdownIcon, ReactIcon, ReduxIcon } from '../assets/svg/logos';
+import indexPageStyle from '../styles/indexPageStyle';
+import Avatar from 'material-ui/Avatar';
+import Divider from 'material-ui/Divider';
 
 const logosList = {
-	'React': {
-		icon:ReactIcon,
-		bgColor: 'blue'
+	'React' : {
+		icon : ReactIcon,
+		bgColor : 'blue',
 	},
-	'Babel': {
-		icon:BabelIcon,
-		bgColor: 'green'
+	'Redux' : {
+		icon : ReduxIcon,
+		bgColor : 'blue',
 	},
-	'Gatsby': {
-		icon:GatsbyIcon,
-		bgColor: 'purple'
+	'GraphQL' : {
+		icon : GraphQLIcon,
+		bgColor : 'rose',
 	},
-}
-const IndexPage = ({data}) => {
-	const {edges : posts} = data.allMarkdownRemark;
-	return (
-		<Grid container>
-			{ posts.map ((post) => {
-				return (
-					<ItemGrid xs={ 12 } sm={ 6 } md={ 6 } key={ post.node.id }>
-						<WaterfallCard
-							icon={logosList[`${post.node.frontmatter.about}`].icon}
-							iconColor={logosList[`${post.node.frontmatter.about}`].bgColor}
-							title={ post.node.frontmatter.date }
-							description={ post.node.frontmatter.title }
+	'Babel' : {
+		icon : BabelIcon,
+		bgColor : 'red',
+	},
+	'Gatsby' : {
+		icon : GatsbyIcon,
+		bgColor : 'purple',
+	},
+	'Markdown' : {
+		icon : MarkdownIcon,
+		bgColor : 'white',
+	},
+};
 
-							statIcon={ Warning }
-							statIconColor='danger'
-							statLink={ {text : 'Get More Space...', href : '#pablo'} }
-						>
-							{post.node.frontmatter.tags.map(tag => (
-								<div>{tag}</div>
-							))}
-						</WaterfallCard>
+/**
+ * @param tag is a string got from markdown frontmatter
+ * @returns component Avatar
+ * this function is for generating tag avatar dynamically based on tag name
+ * syntax <logoList[tag].icon is not allowed, so I abstracted this function.
+ */
 
-						<Link to={ post.node.frontmatter.path }
-						>
-						</Link>
-					</ItemGrid>
 
-				);
-			}) }
-		</Grid>
-	);
+class IndexPage extends Component {
+
+	generateTagAvatar = (tag) => {
+		let tagComponent = logosList[tag];
+		return tagComponent ? <tagComponent.icon/> : null;
+	};
+	render() {
+		const {data, classes} = this.props;
+		const {edges : posts} = data.allMarkdownRemark;
+		return (
+			<Grid container>
+				{ posts.map ((post) => {
+					return (
+						<ItemGrid xs={ 12 } sm={ 6 } md={ 6 } key={ post.node.id }>
+							<WaterfallCard
+								icon={ logosList[`${post.node.frontmatter.about}`].icon }
+								iconColor={ logosList[`${post.node.frontmatter.about}`].bgColor }
+								info={ post.node.frontmatter.date }
+								title={ post.node.frontmatter.title }
+								postLink={ post.node.frontmatter.path }
+							>
+								<Grid container>
+									<Grid item xs={ 12 }>
+										<Grid container className={ classes.tagGrid }>
+											{ /*<div className={ classes.row }>*/ }
+											{ post.node.frontmatter.tags.map ((tag) => (
+												<Grid item xs={ 'auto' } key={ `${post.node.id}${tag}` }>
+													<Avatar
+														alt={ tag }
+														className={ classes.tagAvatar }
+													>
+														{ this.generateTagAvatar (tag) }
+													</Avatar>
+												</Grid>
+											)) }
+											{ /*</div>*/ }
+											<Divider/>
+										</Grid>
+									</Grid>
+									<Grid item xs={ 12 }>
+										<Grid container>
+											<Grid item xs={ 12 }>
+												{post.node.frontmatter.snippet}
+											</Grid>
+										</Grid>
+									</Grid>
+								</Grid>
+
+							</WaterfallCard>
+						</ItemGrid>
+
+					);
+				}) }
+			</Grid>
+		);
+	}
 };
 
 export const listQuery = graphql`
@@ -67,9 +114,10 @@ export const listQuery = graphql`
                     frontmatter{
                         path
                         title
-	                    date
-	                    about
-	                    tags
+                        date
+                        about
+                        tags
+	                    snippet
                     }
                 }
             }
@@ -77,4 +125,10 @@ export const listQuery = graphql`
     }
 `;
 
-export default withStyles (appStyle) (IndexPage);
+IndexPage.propTypes = {
+	data : PropTypes.object.isRequired,
+	classes : PropTypes.object.isRequired,
+
+};
+
+export default withStyles (indexPageStyle) (IndexPage);
