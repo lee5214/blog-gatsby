@@ -11,6 +11,7 @@ import sidebarStyle from '../../styles/sidebarContentStyle';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import {createMuiTheme} from 'material-ui/styles'
+import logo from '../../assets/logo_simple_white.png';
 const muiTheme = createMuiTheme({
 	ripple: {
 		color: 'orange',
@@ -104,7 +105,7 @@ class SidebarContent extends Component {
 	};
 
 	render () {
-		const logo = '/static/logo_simple_white.png';
+		//const logo = '/static/logo_simple_white.png';
 		const content = '';
 		const {classes, posts} = this.props;
 		return (

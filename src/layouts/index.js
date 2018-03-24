@@ -14,6 +14,7 @@ import HomeIcon from 'material-ui-icons/Home';
 import MenuIcon from 'material-ui-icons/Menu';
 import PersonIcon from 'material-ui-icons/Person';
 import PhoneIcon from 'material-ui-icons/Phone';
+import logo from '../assets/logo_simple_black.png'
 //import '../styles/index.css';
 const drawerWidth = 300;
 const styles = (theme) => ({
@@ -96,7 +97,7 @@ class TemplateWrapper extends Component {
 
 					] }
 				>
-					<link rel='shortcut icon' type='image/png' href='/static/logo_simple_black.png'/>
+					<link rel='shortcut icon' type='image/png' href={`${logo}`}/>
 				</Helmet>
 
 				<AppBar className={ classes.appBar }>
