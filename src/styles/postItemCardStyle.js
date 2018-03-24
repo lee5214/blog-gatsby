@@ -1,10 +1,12 @@
 import {
+	blackCardHeader,
 	blueCardHeader,
 	card,
 	cardActions,
 	cardHeader,
 	dangerColor,
 	defaultFont,
+	defaultLink,
 	grayColor,
 	greenCardHeader,
 	infoColor,
@@ -16,11 +18,9 @@ import {
 	successColor,
 	warningColor,
 	whiteCardHeader,
-	blackCardHeader,
-	defaultLink
-} from '../styles';
+} from './styles';
 
-const statsCardStyle = {
+const postItemCardStyle = theme => ({
 	card,
 	cardHeader : {
 		...cardHeader,
@@ -38,7 +38,7 @@ const statsCardStyle = {
 		textAlign : 'right',
 		paddingTop : '10px',
 		padding : '15px 20px',
-		marginTop: '30px',
+		marginTop : '30px',
 	},
 	cardIcon : {
 		width : '40px',
@@ -46,7 +46,7 @@ const statsCardStyle = {
 		fill : '#fff',
 	},
 	cardAvatar : {
-		margin: 0
+		margin : 0,
 	},
 	cardCategory : {
 		marginBottom : '0',
@@ -59,7 +59,7 @@ const statsCardStyle = {
 		...defaultFont,
 		fontSize : '1.425em',
 		fontWeight : '400',
-		textAlign : 'left',
+		textAlign : 'right',
 	},
 	cardTitleSmall : {
 		fontSize : '65%',
@@ -71,50 +71,23 @@ const statsCardStyle = {
 		...cardActions,
 		padding : '0!important',
 	},
-	cardStats : {
-		lineHeight : '22px',
-		color : grayColor,
-		fontSize : '12px',
-		display : 'inline-block',
-		margin : '0!important',
-	},
-	cardStatsIcon : {
-		position : 'relative',
-		top : '4px',
-		width : '16px',
-		height : '16px',
-	},
-	warningCardStatsIcon : {
-		color : warningColor,
-	},
-	primaryCardStatsIcon : {
-		color : primaryColor,
-	},
-	dangerCardStatsIcon : {
-		color : dangerColor,
-	},
-	successCardStatsIcon : {
-		color : successColor,
-	},
-	infoCardStatsIcon : {
-		color : infoColor,
-	},
-	roseCardStatsIcon : {
-		color : roseColor,
-	},
-	grayCardStatsIcon : {
-		color : grayColor,
-	},
-	cardStatsLink : {
-		color : primaryColor,
-		textDecoration : 'none',
-		...defaultFont,
-	},
 	cardTitleLink : {
-		color: grayColor,
 		...defaultLink,
+		textDecoration : 'none',
+		textTransform: 'capitalize',
+		fontFamily : 'Montserrat',
+		background : 'black',
+		color : 'white',
+		padding : '4px',
 
-	}
-};
+		textAlign : 'center',
+		[theme.breakpoints.up ('md')] : {
+			fontSize : '1.25rem',
+		},
+		[theme.breakpoints.down ('sm')] : {
+			fontSize : '1rem',
+		},
+	},
+});
 
-export default statsCardStyle;
+export default postItemCardStyle;

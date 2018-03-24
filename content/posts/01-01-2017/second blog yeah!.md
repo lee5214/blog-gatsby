@@ -1,6 +1,6 @@
 ---
 path: '/second'  
-title: 'second blog yeah!'  
+title: 'Second blog yeah!'  
 published: true
 date: 01-02-2018
 about: 'Babel'

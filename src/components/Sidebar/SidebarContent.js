@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import moment from 'moment';
@@ -8,6 +9,16 @@ import Divider from 'material-ui/Divider';
 import Typography from 'material-ui/Typography';
 import sidebarStyle from '../../styles/sidebarContentStyle';
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import {createMuiTheme} from 'material-ui/styles'
+const muiTheme = createMuiTheme({
+	ripple: {
+		color: 'orange',
+	},
+	palette:{
+		tyep:'dark'
+	}
+});
 
 const SidebarContainer = styled.div`
 	position: fixed;
@@ -70,39 +81,25 @@ class SidebarContent extends Component {
 	createPostButton = (post) => {
 		const {classes, themeColor} = this.props;
 		return (
-			<Link to={ post.node.frontmatter.path }
-			      style={ {textDecoration : 'none'} }
-					key={`sidebarlink-${post.node.id}`}
-			>
-				<ListItem button
-				          className={ `${classes.itemLink} ${this.activeRoute (post.node.frontmatter.path) ? classes[themeColor] : null}` }>
-					<ListItemText className={ classes.buttonText }
-						primary={
-							<Typography type={ 'body2' } className={ classes.buttonTextPrimary }>
-								{ post.node.frontmatter.title }
-							</Typography>
-						}
-						secondary={
-							<span>
+			<ListItem button
+			          component={ Link }
+			          to={ post.node.frontmatter.path }
+			          key={ `sidebarlink-${post.node.id}` }
+			          className={ ` ${classes.itemLink} ${this.activeRoute (post.node.frontmatter.path) ? classes[themeColor] : ''}` }>
+				<ListItemText className={ classes.buttonText }
+				              primary={
+					              <Typography type={ 'body2' } className={ classes.buttonTextPrimary }>
+						              { post.node.frontmatter.title }
+					              </Typography>
+				              }
+				              secondary={
+					              <span>
 								{ moment (post.node.frontmatter.date, 'MM-DD-YYYY').fromNow () }
 							</span>
 
-						}
-					/>
-				</ListItem>
-				{ /*<ListItem button key={ post.node.id } to={ post.node.frontmatter.path }>
-				 <ListItemText
-				 primary={
-				 <Typography type={ 'body2' }>
-				 { post.node.frontmatter.title }
-				 </Typography>
-				 }
-				 secondary={
-				 moment (post.node.frontmatter.date, 'MM-DD-YYYY').fromNow ()
-				 }
-				 />
-				 </ListItem>*/ }
-			</Link>
+				              }
+				/>
+			</ListItem>
 		);
 	};
 
@@ -111,24 +108,30 @@ class SidebarContent extends Component {
 		const content = '';
 		const {classes, posts} = this.props;
 		return (
-			<div>
+			<MuiThemeProvider theme={muiTheme}>
 				<div>
-					<div className={ classes.logo }>
-						<Link to='/' className={ classes.logoLink }>
-							<div className={ classes.logoImage }>
-								<img src={ logo } alt="logo" className={ classes.img }/>
-							</div>
-							{ content }
-						</Link>
-					</div>
+				<div className={ classes.logo }>
+					<Link to='/' className={ classes.logoLink }>
+						<div className={ classes.logoImage }>
+							<img src={ logo } alt="logo" className={ classes.img }/>
+						</div>
+						{ content }
+					</Link>
 				</div>
 				<Divider className={ classes.headerDivider }/>
-				<List className={classes.sidebarList}>
-					{ posts.map ((post) => this.createPostButton (post)) }
-				</List>
-			</div>
+				<div className={ classes.sidebarListContainer }>
+					<List className={ classes.sidebarList }>
+						{ posts.map ((post) => this.createPostButton (post)) }
+					</List>
+				</div>
+				<Divider className={ classes.headerDivider }/>
+				</div>
+			</MuiThemeProvider>
 		);
 	}
 }
 
+SidebarContent.propTypes = {
+	posts : PropTypes.array,
+};
 export default withStyles (sidebarStyle) (SidebarContent);

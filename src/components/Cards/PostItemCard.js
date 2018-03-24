@@ -2,11 +2,10 @@ import React from 'react';
 import { Card, CardActions, CardContent, CardHeader, Typography, withStyles } from 'material-ui';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import waterfallCardStyle from '../../styles/styles/waterfallCardStyle';
+import postItemCardStyle from '../../styles/postItemCardStyle';
 
-function WaterfallCard ({...props}) {
+function PostItemCard ({...props}) {
 	const {
-		children,
 		classes,
 		info,
 		title,
@@ -52,12 +51,12 @@ function WaterfallCard ({...props}) {
 	);
 }
 
-WaterfallCard.defaultProps = {
+PostItemCard.defaultProps = {
 	iconColor : 'purple',
 	statIconColor : 'gray',
 };
 
-WaterfallCard.propTypes = {
+PostItemCard.propTypes = {
 	children : PropTypes.object,
 	classes : PropTypes.object.isRequired,
 	icon : PropTypes.func.isRequired,
@@ -80,4 +79,4 @@ WaterfallCard.propTypes = {
 	postLink : PropTypes.string.isRequired,
 };
 
-export default withStyles (waterfallCardStyle) (WaterfallCard);
+export default withStyles (postItemCardStyle) (PostItemCard);

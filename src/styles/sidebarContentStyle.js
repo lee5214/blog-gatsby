@@ -16,24 +16,34 @@ import {
 } from './styles';
 
 const sidebarContentStyle = theme => ({
-
 	buttonText : {
+		margin: '10px, 0',
 		padding : 0,
 		textAlign : 'right',
 	},
 	buttonTextPrimary : {
-		fontWeight: 300,
+		fontWeight: 400,
 		color : 'white',
 		textAlign : 'left',
+		fontFamily : 'Montserrat',
+
 	},
 	headerDivider : {
 		width : '60%',
-		marginLeft : '20%',
-		background : 'black',
+		background : 'white',
+		margin : '0 auto'
+	},
+	sidebarListContainer : {
+		height: 500,
+		overflow: 'scroll',
 	},
 	sidebarList : {
-		height : 'calc(100vh - 100px)',
+		height : 'auto',
 		overflow : 'scroll',
+		display: 'flex',
+		flexGrow: 1,
+		flexDirection: 'column',
+		justifyContent: 'center',
 	},
 	drawerPaper : {
 		border : 'none',
@@ -71,6 +81,7 @@ const sidebarContentStyle = theme => ({
 		},
 	},
 	logo : {
+		marginTop: 40,
 		display : 'flex',
 		justifyContent : 'center',
 		position : 'relative',
@@ -142,15 +153,19 @@ const sidebarContentStyle = theme => ({
 		textDecoration : 'none',
 	},
 	itemLink : {
+		color: 'rgba(0, 0, 0, 1)',
 		width : 'auto',
 		transition : 'all 300ms linear',
-		margin : '10px 15px 0',
+		margin : '1rem .5rem ',
+		padding : '1.5rem .5rem',
 		borderRadius : '3px',
 		position : 'relative',
 		display : 'block',
-		padding : '10px',
 		backgroundColor : 'transparent',
 		...defaultFont,
+		/*'& :hover' : {
+			backgroundColor : 'rgba(255, 255, 255, 0.24) !important',
+		}*/
 	},
 	itemIcon : {
 		width : '24px',
@@ -163,7 +178,6 @@ const sidebarContentStyle = theme => ({
 	},
 	itemText : {
 		...defaultFont,
-		margin : '0',
 		lineHeight : '30px',
 		fontSize : '14px',
 		color : '#FFFFFF',

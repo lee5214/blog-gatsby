@@ -74,7 +74,7 @@ export const GraphQLIcon = (props) => {
 			</svg>
 		</SvgIcon>
 	)
-}
+};
 
 export const MarkdownIcon = (props) => {
 	return (
@@ -86,7 +86,7 @@ export const MarkdownIcon = (props) => {
 			</svg>
 		</SvgIcon>
 	)
-}
+};
 
 export const MaterialUIIcon = (props) => {
 	return (
@@ -110,7 +110,6 @@ export const MaterialUIIcon = (props) => {
 			</svg>
 		</SvgIcon>
 	)
-}
-
+};
 
 

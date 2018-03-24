@@ -1,38 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import { AppBar, Badge, Drawer, Hidden, IconButton, Modal, Tab, Tabs, Toolbar } from 'material-ui';
+import { Drawer, Hidden, Modal } from 'material-ui';
 import SidebarContent from './SidebarContent';
 import { withStyles } from 'material-ui/styles';
-import Typography from 'material-ui/Typography';
-import HomeIcon from 'material-ui-icons/Home';
-import MenuIcon from 'material-ui-icons/Menu'
-import PersonIcon from 'material-ui-icons/Person'
-import PhoneIcon from 'material-ui-icons/Phone'
 import sidebarStyle from '../../styles/sidebarStyle';
 
 class Sidebar extends Component {
-	constructor (props) {
-		super (props);
-		this.state = {
-			mobileOpen : false,
-		};
-	}
-
-	handleDrawerToggle = () => {
-		this.setState ({mobileOpen : !this.state.mobileOpen});
-	};
 
 	render () {
-		const {classes, posts, themeColor} = this.props;
+		const {mobileOpen, handleDrawerToggle, classes, posts, themeColor} = this.props;
 		return (
 			<div className={ classes.container }>
 
 				<Hidden mdUp>
 					<Modal
 						disableAutoFocus={ true }
-						open={ this.state.mobileOpen }
-						onClose={ this.handleDrawerToggle }
+						open={ mobileOpen }
+						onClose={ handleDrawerToggle }
 						// variant='temporary'
 						// anchor='left'
 						// classes={ {paper : classes.drawerPaper} }
@@ -42,6 +26,7 @@ class Sidebar extends Component {
 						//  } }
 					>
 						<div className={ classes.drawerPaper }>
+							<div className={classes.paperOverlay} />
 							<SidebarContent posts={ posts } themeColor={ themeColor }/>
 						</div>
 					</Modal>
@@ -50,6 +35,7 @@ class Sidebar extends Component {
 					< Drawer variant='permanent' open
 					         classes={ {paper : classes.drawerPaper} }
 					>
+						<div className={classes.paperOverlay} />
 						<SidebarContent posts={ posts } themeColor={ themeColor }/>
 					</Drawer>
 				</Hidden>

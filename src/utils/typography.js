@@ -1,9 +1,9 @@
-import Typography from 'typography';
+/*import Typography from 'typography';
 import github from 'typography-theme-github';
 
-/*fairyGateTheme.overrideStyles()=>{
+/!*fairyGateTheme.overrideStyles()=>{
 	'textShadow' = '0 0 0'
-};*/
+};*!/
 const typography = new Typography({
 	baseFontSize: "18px",
 	baseLineHeight: 1.45,
@@ -20,4 +20,4 @@ const typography = new Typography({
 });
 //const typography = new Typography (github);
 
-export default typography;
+export default typography;*/

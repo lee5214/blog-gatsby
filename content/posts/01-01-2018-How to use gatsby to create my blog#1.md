@@ -103,7 +103,7 @@ This header for all posts in markdown is called `frontmatter`, it provides detai
 #### Create post template
 Gatsby already set up the basic functions such as routing under the hood, so that we don't need to do those things again.
 To generate a static page, just create a component file in `src/pages`, it will be served on `domain/[file-name]`.
-To create pages based on these markdown files dynamically, a template is needed as `src/template/post.js`.  
+To create pages based on these markdown files dynamically, a template is needed as `src/template/postTemplate.js`.  
 
 ```javascript{5,9,16-23}
     import React from 'react';
@@ -144,7 +144,7 @@ To let plugins to create pages, config in gatsby-node.js is needed.
     // boundActionCreators let us use gatsby's redux action creators 
     exports.createPages = ({boundActionCreators, graphql}) => {
         const {createPage} = boundActionCreators;
-        const postTemplate = path.resolve ('src/templates/post.js');
+        const postTemplate = path.resolve ('src/templates/postTemplate.js');
         
         // query all markdown data
         return graphql (`{
@@ -220,7 +220,7 @@ For more detail, read [here](https://www.gatsbyjs.org/packages/gatsby-remark-pri
 
 #### Styled component modify markdown  
 I want to use styled component for modify some markdown default styles, such as subtitles' `margin-top`.  
-in `src/templates/post.js`
+in `src/templates/postTemplate.js`
 ```javascript
     // create a wrapper
     const MDContentWrapper = styled.div`

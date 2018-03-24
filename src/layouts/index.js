@@ -7,25 +7,26 @@ import { withStyles } from 'material-ui/styles';
 import 'prismjs/themes/prism-tomorrow.css';
 import Sidebar from '../components/Sidebar';
 
-import Link from 'gatsby-link'
-import { AppBar, Badge, Drawer, Hidden, IconButton, Modal, Tab, Tabs, Toolbar } from 'material-ui';
+import Link from 'gatsby-link';
+import { AppBar, Badge, IconButton, Tab, Tabs, Toolbar } from 'material-ui';
 import Typography from 'material-ui/Typography';
 import HomeIcon from 'material-ui-icons/Home';
-import MenuIcon from 'material-ui-icons/Menu'
-import PersonIcon from 'material-ui-icons/Person'
-import PhoneIcon from 'material-ui-icons/Phone'
+import MenuIcon from 'material-ui-icons/Menu';
+import PersonIcon from 'material-ui-icons/Person';
+import PhoneIcon from 'material-ui-icons/Phone';
 //import '../styles/index.css';
 const drawerWidth = 300;
 const styles = (theme) => ({
 	root : {
 		flexGrow : 1,
-		height : '100vh',
+		height : 'calc(100vh - 16px)',
 		zIndex : 1,
 		position : 'relative',
 		display : 'flex',
-		width : '100vw',
 	},
 	appBar : {
+		background : 'white',
+		color : 'black',
 		position : 'absolute',
 		marginLeft : drawerWidth,
 		[theme.breakpoints.up ('md')] : {
@@ -33,16 +34,25 @@ const styles = (theme) => ({
 		},
 	},
 	navIconHide : {
+
 		[theme.breakpoints.up ('md')] : {
 			display : 'none',
 		},
 	},
 	content : {
-		width: '100%',
-		overflow: 'scroll',
+		width : '100%',
+		overflow : 'scroll',
 		flexGrow : 1,
 		backgroundColor : theme.palette.background.default,
 		padding : theme.spacing.unit * 3,
+	},
+	tabBadge : {
+		'& > span' : {
+			top : 0,
+			right : -24,
+			backgroundColor : 'transparent',
+			color : 'black'
+		}
 	}
 
 });
@@ -56,10 +66,26 @@ const PostBlock = styled.div`
 
 class TemplateWrapper extends Component {
 
+	constructor (props) {
+		super (props);
+		this.state = {
+			mobileOpen : false,
+			tabNum : 0,
+		};
+	}
+
+	handleDrawerToggle = () => {
+		this.setState ({mobileOpen : !this.state.mobileOpen});
+	};
+
+	handleTabChange = (event, value) => {
+		this.setState ({tabNum : value});
+	};
+
 	render () {
 		const {classes, data} = this.props;
 		const {edges : posts} = data.allMarkdownRemark;
-		const themeColor = 'blue'
+		const themeColor = 'blue';
 		return (
 			<div className={ classes.root }>
 				<Helmet
@@ -88,22 +114,33 @@ class TemplateWrapper extends Component {
 						</Typography>
 					</Toolbar>
 
-					<Tabs value={ 0 } >
-						<Tab style={{justifySelf:'flex-end'}}
-						     label={
-							     <Badge className={ classes.padding } color="secondary" badgeContent={ 4 }>
-								     <Link to={ '/' }>Home</Link>
-							     </Badge>
-						     }
-						     icon={ <HomeIcon/> }
-						/>
-						<Tab label="About"/>
-						<Tab label="Contact"/>
+					<Tabs centered
+					      value={ this.state.tabNum }
+					      onChange={ this.handleTabChange }
+					>
+
+						<Tab label={
+							<Badge className={ classes.tabBadge } color="secondary" badgeContent={`${ posts.length }P`}>
+								<HomeIcon>Home</HomeIcon>
+							</Badge> }
+						     component={ Link }
+						     to={ '/' }/>
+						<Tab label={
+							<PersonIcon>About</PersonIcon>
+
+						} component={ Link }
+						     to={ '/about' }/>/>
+
+						<Tab label={
+							<PhoneIcon>Contact</PhoneIcon>
+						} component={ Link }
+						     to={ '/contact' }/>/>
 					</Tabs>
 				</AppBar>
 
 
-				<Sidebar posts={ posts } themeColor={themeColor}
+				<Sidebar mobileOpen={ this.state.mobileOpen } handleDrawerToggle={ this.handleDrawerToggle }
+				         posts={ posts } themeColor={ themeColor }
 				/>
 				<main className={ classes.content }>
 					<Header/>

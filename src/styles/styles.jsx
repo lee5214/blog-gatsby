@@ -28,9 +28,9 @@ const card = {
 };
 
 const defaultFont = {
-	fontFamily : " 'Montserrat','Roboto', 'Helvetica', 'Arial', sans-serif ",
-	fontWeight : '300',
-	lineHeight : '1.5em',
+	fontFamily : " 'Roboto', 'Helvetica', 'Arial', sans-serif ",
+	fontWeight : '400',
+	lineHeight : '1.5rem',
 	color : 'rgba(0, 0, 0, 0.6)',
 };
 
@@ -40,7 +40,7 @@ const dangerColor = '#f44336';
 const successColor = '#4caf50';
 const infoColor = '#00acc1';
 const roseColor = '#e91e63';
-const grayColor = '#999999';
+
 
 const primaryBoxShadow = {
 	boxShadow :
@@ -147,7 +147,6 @@ export {
 	successColor,
 	infoColor,
 	roseColor,
-	grayColor,
 	primaryBoxShadow,
 	infoBoxShadow,
 	successBoxShadow,

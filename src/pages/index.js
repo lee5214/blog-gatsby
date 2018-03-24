@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
 import ItemGrid from '../components/Grid/ItemGrid';
-import WaterfallCard from '../components/Cards/WaterfallCard';
+import PostItemCard from '../components/Cards/PostItemCard';
 import { BabelIcon, GatsbyIcon, GraphQLIcon, MarkdownIcon, ReactIcon, ReduxIcon, MaterialUIIcon } from '../assets/svg/logos';
 import indexPageStyle from '../styles/indexPageStyle';
 import Avatar from 'material-ui/Avatar';
@@ -46,8 +46,6 @@ const logosList = {
  * this function is for generating tag avatar dynamically based on tag name
  * syntax <logoList[tag].icon is not allowed, so I abstracted this function.
  */
-
-
 class IndexPage extends Component {
 
 	generateTagAvatar = (tag) => {
@@ -62,7 +60,7 @@ class IndexPage extends Component {
 				{ posts.map ((post) => {
 					return (
 						<ItemGrid xs={ 12 } sm={ 6 } md={ 6 } key={ post.node.id }>
-							<WaterfallCard
+							<PostItemCard
 								icon={ logosList[`${post.node.frontmatter.about}`].icon }
 								iconColor={ logosList[`${post.node.frontmatter.about}`].bgColor }
 								info={ post.node.frontmatter.date }
@@ -96,7 +94,7 @@ class IndexPage extends Component {
 									</Grid>
 								</Grid>
 
-							</WaterfallCard>
+							</PostItemCard>
 						</ItemGrid>
 
 					);
