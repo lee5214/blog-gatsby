@@ -6,6 +6,7 @@ module.exports = {
 	plugins : [
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-styled-components`,
+		`gatsby-plugin-netlify`,
 		{
 			resolve : `gatsby-transformer-remark`,
 			options : {
@@ -49,7 +50,7 @@ module.exports = {
 			resolve : `gatsby-source-filesystem`,
 			options : {
 				name : `pages`,
-				path : `${__dirname}/src/content/posts`,
+				path : `${__dirname}/content/posts`,
 			},
 		},
 	],
