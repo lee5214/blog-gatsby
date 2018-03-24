@@ -4,9 +4,9 @@ const sidebarStyle = theme => ({
 	paperOverlay : {
 		width : drawerWidth,
 		height : '100%',
-		background : 'black',
+		background : 'white',
 		position : 'absolute',
-		opacity : .6,
+		opacity : .2,
 		zIndex : -1,
 	},
 	drawerPaper : {

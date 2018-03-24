@@ -6,7 +6,6 @@ module.exports = {
 	plugins : [
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-styled-components`,
-		`gatsby-plugin-netlify`,
 		{
 			resolve : `gatsby-transformer-remark`,
 			options : {
@@ -20,12 +19,12 @@ module.exports = {
 				],
 			},
 		},
-		/*	{
+			{
 		 resolve : `gatsby-plugin-typography`,
 		 options : {
 		 pathToConfigModule : `src/utils/typography.js`,
 		 },
-		 },*/
+		 },
 		{
 			resolve : `gatsby-plugin-google-fonts`,
 			options : {
@@ -53,5 +52,6 @@ module.exports = {
 				path : `${__dirname}/content/posts`,
 			},
 		},
+		`gatsby-plugin-netlify`,
 	],
 };

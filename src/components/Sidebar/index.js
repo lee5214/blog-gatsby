@@ -26,8 +26,10 @@ class Sidebar extends Component {
 						//  } }
 					>
 						<div className={ classes.drawerPaper }>
-							<div className={classes.paperOverlay} />
-							<SidebarContent posts={ posts } themeColor={ themeColor }/>
+							<div className={ classes.paperOverlay }/>
+							<SidebarContent posts={ posts }
+							                themeColor={ themeColor }
+							                location={ this.props.location }/>
 						</div>
 					</Modal>
 				</Hidden>
@@ -35,10 +37,10 @@ class Sidebar extends Component {
 					< Drawer variant='permanent' open
 					         classes={ {paper : classes.drawerPaper} }
 					>
-						<div className={classes.paperOverlay} />
+						<div className={ classes.paperOverlay }/>
 						<SidebarContent posts={ posts }
 						                themeColor={ themeColor }
-						location={this.props.location}
+						                location={ this.props.location }
 						/>
 					</Drawer>
 				</Hidden>

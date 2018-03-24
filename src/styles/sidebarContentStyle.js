@@ -34,7 +34,7 @@ const sidebarContentStyle = theme => ({
 		margin : '0 auto'
 	},
 	sidebarListContainer : {
-		height: 500,
+		maxHeight: '100%',
 		overflow: 'scroll',
 	},
 	sidebarList : {
@@ -157,7 +157,7 @@ const sidebarContentStyle = theme => ({
 		width : 'auto',
 		transition : 'all 300ms linear',
 		margin : '1rem .5rem ',
-		padding : '1.5rem .5rem',
+		padding : '1rem .5rem',
 		borderRadius : '3px',
 		position : 'relative',
 		display : 'block',

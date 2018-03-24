@@ -1,23 +1,16 @@
-/*import Typography from 'typography';
+import Typography from 'typography';
 import github from 'typography-theme-github';
 
-/!*fairyGateTheme.overrideStyles()=>{
+/*fairyGateTheme.overrideStyles()=>{
 	'textShadow' = '0 0 0'
-};*!/
+};*/
 const typography = new Typography({
-	baseFontSize: "18px",
+	baseFontSize: "14px",
 	baseLineHeight: 1.45,
-	headerFontFamily: [
-		"Montserrat",
-		"Avenir Next",
-		"Helvetica Neue",
-		"Segoe UI",
-		"Helvetica",
-		"Arial",
-		"sans-serif",
-	],
-	bodyFontFamily: ["Roboto","Georgia", "serif"],
+	fontWeight: 700,
+	headerFontFamily: ["Montserrat",],
+	bodyFontFamily: ["Roboto","sans-serif", "serif"],
 });
 //const typography = new Typography (github);
 
-export default typography;*/
+export default typography;

@@ -1,9 +1,10 @@
 ---
 path: '/How-to-use-gatsby-to-create-my-blog-1'  
-title: 'Build dynamic blog with Gatsby #1' 
+title: 'Build dynamic blog with Gatsby' 
 published: true
 date: 01-01-2018
 about: 'Gatsby'
+series: 1
 tags: [Gatsby, React, Redux, GraphQL, Markdown]
 snippet : "I'm a big fan of react ecosystem and I always want to create my own blog to share and record some learning experience, so this is it.    
           Gatsby is a super fast static sit generator which let React users to scaffold out a static site in 'React way'.  
@@ -20,14 +21,14 @@ In this post, I will cover some basic use of Gatsby / React / Redux / GraphQL / 
 
 ## Install & Config
 
-#### My current environment:
+### My current environment:
 
 ```javascript
     node: v8.9.4
     npm: v5.6.0
 ```
     
-#### Start fresh
+### Start fresh
 
 ```javascript
     npm install -g gatsby-cli // install cli globally
@@ -39,7 +40,7 @@ In this post, I will cover some basic use of Gatsby / React / Redux / GraphQL / 
 
 I want to minimize my dependency so that I could add some tools I wanna learn/use, but you could use a starter package from [Gatsby Starter](https://www.gatsbyjs.org/docs/gatsby-starters/) for faster result.
 
-#### Install plugins  
+### Install plugins  
 
 This is important, there are hundreds of plugins which make gatsby powerful.   
 Review them here: [Gatsby Plugins](https://www.gatsbyjs.org/packages/).  
@@ -49,7 +50,7 @@ Then install 3 basic plugins for styled-components / data grabbing from source f
     npm i --s gatsby-plugin-styled-components  gatsby-source-filesystem  gatsby-transformer-remark
 ```   
 
-#### Modify root/gatsby-config.js so gatsby could use those plugins.  
+### Modify root/gatsby-config.js so gatsby could use those plugins.  
 Gatsby-config.js has similar style as webpack. 
 
 ```javascript{7-14}
@@ -86,7 +87,7 @@ you should be able to see
 ---
 
 ## Page & Template
-#### Create markdown file
+### Create markdown file
 In file /posts, create [your-markdown-file-name].md, inside start with
 ```markdown
     ---
@@ -100,7 +101,7 @@ In file /posts, create [your-markdown-file-name].md, inside start with
 ```
 This header for all posts in markdown is called `frontmatter`, it provides details for each post so that graphql could filter/sort based on the info.  
  
-#### Create post template
+### Create post template
 Gatsby already set up the basic functions such as routing under the hood, so that we don't need to do those things again.
 To generate a static page, just create a component file in `src/pages`, it will be served on `domain/[file-name]`.
 To create pages based on these markdown files dynamically, a template is needed as `src/template/postTemplate.js`.  
@@ -135,7 +136,7 @@ To create pages based on these markdown files dynamically, a template is needed 
     `;
 ```
 
-#### Tell plugin to create pages
+### Tell plugin to create pages
 To let plugins to create pages, config in gatsby-node.js is needed.  
 
 ```javascript{5-6,28-31}
@@ -177,14 +178,14 @@ To let plugins to create pages, config in gatsby-node.js is needed.
 ```
 Now the page should be showing on `domain/[file-path]`
 
-#### Create post list in index
+### Create post list in index
 To get a list of posts, it's similar as what we did above. Use graphql in `pages/index.js` to query the list of post info, then pass into a 
 component as props.
   
 ---
 
 ## Style
-#### Code block highlight
+### Code block highlight
 You may wonder how to get the code style and highlight like I did above, it's a plugin called ```gatsby-remark-prismjs```.  
 install the plugin and modify in ```gatsby-config``` like this.  
 
@@ -218,7 +219,7 @@ Also import a pre-defined style sheet such as `prismjs/themes/prism-tomorrow.css
 or create your own css class `.gatsby-highlight-code-line`.  
 For more detail, read [here](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/?=pri)  
 
-#### Styled component modify markdown  
+### Styled component modify markdown  
 I want to use styled component for modify some markdown default styles, such as subtitles' `margin-top`.  
 in `src/templates/postTemplate.js`
 ```javascript

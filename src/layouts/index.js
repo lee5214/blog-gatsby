@@ -14,7 +14,7 @@ import HomeIcon from 'material-ui-icons/Home';
 import MenuIcon from 'material-ui-icons/Menu';
 import PersonIcon from 'material-ui-icons/Person';
 import PhoneIcon from 'material-ui-icons/Phone';
-import logo from '../assets/logo_simple_black.png'
+import logo from '../assets/logo_simple_black.png';
 //import '../styles/index.css';
 const drawerWidth = 300;
 const styles = (theme) => ({
@@ -52,9 +52,9 @@ const styles = (theme) => ({
 			top : 0,
 			right : -24,
 			backgroundColor : 'transparent',
-			color : 'black'
-		}
-	}
+			color : 'black',
+		},
+	},
 
 });
 
@@ -97,7 +97,7 @@ class TemplateWrapper extends Component {
 
 					] }
 				>
-					<link rel='shortcut icon' type='image/png' href={`${logo}`}/>
+					<link rel='shortcut icon' type='image/png' href={ `${logo}` }/>
 				</Helmet>
 
 				<AppBar className={ classes.appBar }>
@@ -119,22 +119,20 @@ class TemplateWrapper extends Component {
 					      value={ this.state.tabNum }
 					      onChange={ this.handleTabChange }
 					>
-
 						<Tab label={
-							<Badge className={ classes.tabBadge } color="secondary" badgeContent={`${ posts.length }P`}>
+							<Badge className={ classes.tabBadge } color="secondary"
+							       badgeContent={ `${ posts.length }P` }>
 								<HomeIcon>Home</HomeIcon>
-							</Badge> }
+							</Badge>
+						}
 						     component={ Link }
 						     to={ '/' }/>
-						<Tab label={
-							<PersonIcon>About</PersonIcon>
-
-						} component={ Link }
+						<Tab label={ <PersonIcon>About</PersonIcon> }
+						     component={ Link }
 						     to={ '/about' }/>/>
 
-						<Tab label={
-							<PhoneIcon>Contact</PhoneIcon>
-						} component={ Link }
+						<Tab label={ <PhoneIcon>Contact</PhoneIcon> }
+						     component={ Link }
 						     to={ '/contact' }/>/>
 					</Tabs>
 				</AppBar>
@@ -144,7 +142,7 @@ class TemplateWrapper extends Component {
 				         handleDrawerToggle={ this.handleDrawerToggle }
 				         posts={ posts }
 				         themeColor={ themeColor }
-				         location={location}
+				         location={ location }
 				/>
 				<main className={ classes.content }>
 					<Header/>

@@ -1,4 +1,4 @@
-import { container, drawerWidth, transition, defaultLink } from './styles.jsx';
+import { container, defaultLink, drawerWidth, transition } from './styles.jsx';
 
 const indexPageStyle = theme => ({
 	wrapper : {
@@ -7,7 +7,7 @@ const indexPageStyle = theme => ({
 		height : '100vh',
 	},
 	mainPanel : {
-		[ theme.breakpoints.up ('md') ] : {
+		[theme.breakpoints.up ('md')] : {
 			width : `calc(100% - ${drawerWidth}px)`,
 		},
 		overflow : 'auto',
@@ -31,17 +31,17 @@ const indexPageStyle = theme => ({
 	tagGrid : {
 		display : 'flex',
 		justifyContent : 'center',
-		flexGrow: 1,
+		flexGrow : 1,
 
-		marginTop: 5,
+		marginTop : 5,
 	},
 	tagAvatar : {
-		width: 30,
-		height: 30,
+		width : 30,
+		height : 30,
 	},
 	titleLink : {
 		...defaultLink,
-		fontWeight: 100,
+		fontWeight : 100,
 	},
 });
 

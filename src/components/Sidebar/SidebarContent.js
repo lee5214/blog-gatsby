@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import moment from 'moment';
-import { withStyles } from 'material-ui/styles';
+import { createMuiTheme, withStyles } from 'material-ui/styles';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Typography from 'material-ui/Typography';
 import sidebarStyle from '../../styles/sidebarContentStyle';
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import {createMuiTheme} from 'material-ui/styles'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import logo from '../../assets/logo_simple_white.png';
-const muiTheme = createMuiTheme({
-	ripple: {
-		color: 'orange',
+
+const muiTheme = createMuiTheme ({
+	ripple : {
+		color : 'orange',
 	},
-	palette:{
-		tyep:'dark'
-	}
+	palette : {
+		tyep : 'dark',
+	},
 });
 
 const SidebarContainer = styled.div`
@@ -79,6 +79,7 @@ class SidebarContent extends Component {
 	activeRoute = (path) => {
 		return this.props.location.pathname.indexOf (path) > -1 ? true : false;
 	};
+
 	createPostButton = (post) => {
 		const {classes, themeColor} = this.props;
 		return (
@@ -109,23 +110,23 @@ class SidebarContent extends Component {
 		const content = '';
 		const {classes, posts} = this.props;
 		return (
-			<MuiThemeProvider theme={muiTheme}>
+			<MuiThemeProvider theme={ muiTheme }>
 				<div>
-				<div className={ classes.logo }>
-					<Link to='/' className={ classes.logoLink }>
-						<div className={ classes.logoImage }>
-							<img src={ logo } alt="logo" className={ classes.img }/>
-						</div>
-						{ content }
-					</Link>
-				</div>
-				<Divider className={ classes.headerDivider }/>
-				<div className={ classes.sidebarListContainer }>
-					<List className={ classes.sidebarList }>
-						{ posts.map ((post) => this.createPostButton (post)) }
-					</List>
-				</div>
-				<Divider className={ classes.headerDivider }/>
+					<div className={ classes.logo }>
+						<Link to='/' className={ classes.logoLink }>
+							<div className={ classes.logoImage }>
+								<img src={ logo } alt="logo" className={ classes.img }/>
+							</div>
+							{ content }
+						</Link>
+					</div>
+					<Divider className={ classes.headerDivider }/>
+					<div className={ classes.sidebarListContainer }>
+						<List className={ classes.sidebarList }>
+							{ posts.map ((post) => this.createPostButton (post)) }
+						</List>
+					</div>
+					<Divider className={ classes.headerDivider }/>
 				</div>
 			</MuiThemeProvider>
 		);

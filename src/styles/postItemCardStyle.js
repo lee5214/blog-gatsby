@@ -55,7 +55,7 @@ const postItemCardStyle = theme => ({
 		...defaultFont,
 	},
 	cardTitle : {
-		margin : '0',
+		margin : '2rem 0 .5rem',
 		...defaultFont,
 		fontSize : '1.425em',
 		fontWeight : '400',
