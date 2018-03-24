@@ -83,7 +83,7 @@ class TemplateWrapper extends Component {
 	};
 
 	render () {
-		const {classes, data} = this.props;
+		const {classes, data, location} = this.props;
 		const {edges : posts} = data.allMarkdownRemark;
 		const themeColor = 'blue';
 		return (
@@ -139,8 +139,11 @@ class TemplateWrapper extends Component {
 				</AppBar>
 
 
-				<Sidebar mobileOpen={ this.state.mobileOpen } handleDrawerToggle={ this.handleDrawerToggle }
-				         posts={ posts } themeColor={ themeColor }
+				<Sidebar mobileOpen={ this.state.mobileOpen }
+				         handleDrawerToggle={ this.handleDrawerToggle }
+				         posts={ posts }
+				         themeColor={ themeColor }
+				         location={location}
 				/>
 				<main className={ classes.content }>
 					<Header/>

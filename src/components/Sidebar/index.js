@@ -36,7 +36,10 @@ class Sidebar extends Component {
 					         classes={ {paper : classes.drawerPaper} }
 					>
 						<div className={classes.paperOverlay} />
-						<SidebarContent posts={ posts } themeColor={ themeColor }/>
+						<SidebarContent posts={ posts }
+						                themeColor={ themeColor }
+						location={this.props.location}
+						/>
 					</Drawer>
 				</Hidden>
 			</div>
