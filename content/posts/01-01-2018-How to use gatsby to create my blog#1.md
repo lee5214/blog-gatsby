@@ -41,7 +41,7 @@ I want to minimize my dependency so that I could add some tools I wanna learn/us
 
 #### Install plugins  
 
-This is important, there are handreds of plugins which make gatsby powerful.   
+This is important, there are hundreds of plugins which make gatsby powerful.   
 Review them here: [Gatsby Plugins](https://www.gatsbyjs.org/packages/).  
 Then install 3 basic plugins for styled-components / data grabbing from source file (markdown)  / markdown parser.  
 
