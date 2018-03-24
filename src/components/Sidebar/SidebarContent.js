@@ -76,7 +76,7 @@ class SidebarContent extends Component {
 	}
 
 	activeRoute = (path) => {
-		return location.pathname.indexOf (path) > -1 ? true : false;
+		return window.location.pathname.indexOf (path) > -1 ? true : false;
 	};
 	createPostButton = (post) => {
 		const {classes, themeColor} = this.props;
