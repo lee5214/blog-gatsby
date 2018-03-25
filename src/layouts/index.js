@@ -85,7 +85,7 @@ class TemplateWrapper extends Component {
 
 	render () {
 		const {classes, data, location} = this.props;
-		const {edges : posts} = data.allMarkdownRemark;
+		const {edges : posts} = this.props.data.allContentfulPost;
 		const themeColor = 'blue';
 		return (
 			<div className={ classes.root }>
@@ -162,22 +162,19 @@ TemplateWrapper.propTypes = {
 
 export const query = graphql`
     query LayoutQuery {
-        allMarkdownRemark {
+        allContentfulPost {
             edges {
                 node {
                     id
-                    frontmatter {
-                        path
-                        title
-                        date
-                        about
-                        tags
-                    }
+                    slug
+                    focus
+                    date
+                    tags
+                    title
+                    date
                 }
             }
         }
     }
 `;
-// export default withStyles (styles) (TemplateWrapper);
 export default withStyles (styles) (TemplateWrapper);
-

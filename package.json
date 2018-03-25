@@ -20,8 +20,9 @@
   },
   "dependencies": {
     "babel-eslint": "^8.2.2",
+    "bluebird": "^3.5.1",
     "color": "^3.0.0",
-    "gatsby": "^1.9.235",
+    "gatsby": "latest",
     "gatsby-1-config-extract-plugin": "^1.0.2",
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-google-fonts": "0.0.4",

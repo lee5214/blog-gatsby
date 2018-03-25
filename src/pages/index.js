@@ -1,10 +1,18 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
 import ItemGrid from '../components/Grid/ItemGrid';
 import PostItemCard from '../components/Cards/PostItemCard';
-import { BabelIcon, GatsbyIcon, GraphQLIcon, MarkdownIcon, ReactIcon, ReduxIcon, MaterialUIIcon } from '../assets/svg/logos';
+import {
+	BabelIcon,
+	GatsbyIcon,
+	GraphQLIcon,
+	MarkdownIcon,
+	MaterialUIIcon,
+	ReactIcon,
+	ReduxIcon,
+} from '../assets/svg/logos';
 import indexPageStyle from '../styles/indexPageStyle';
 import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
@@ -52,26 +60,28 @@ class IndexPage extends Component {
 		let tagComponent = logosList[tag];
 		return tagComponent ? <tagComponent.icon/> : null;
 	};
-	render() {
+
+	render () {
 		const {data, classes} = this.props;
-		const {edges : posts} = data.allMarkdownRemark;
+		const {edges : posts} = data.allContentfulPost;
 		return (
 			<Grid container>
 				{ posts.map ((post) => {
 					return (
 						<ItemGrid xs={ 12 } sm={ 6 } md={ 6 } key={ post.node.id }>
 							<PostItemCard
-								icon={ logosList[`${post.node.frontmatter.about}`].icon }
-								iconColor={ logosList[`${post.node.frontmatter.about}`].bgColor }
-								info={ post.node.frontmatter.date }
-								title={ post.node.frontmatter.title }
-								postLink={ post.node.frontmatter.path }
+								icon={ logosList[`${post.node.focus}`].icon }
+								iconColor={ logosList[`${post.node.focus}`].bgColor }
+								postDate={ post.node.date }
+								title={ post.node.title }
+								postLink={ post.node.slug }
+								small={'#1'}
 							>
 								<Grid container>
 									<Grid item xs={ 12 }>
 										<Grid container className={ classes.tagGrid }>
 											{ /*<div className={ classes.row }>*/ }
-											{ post.node.frontmatter.tags.map ((tag) => (
+											{ post.node.tags.map ((tag) => (
 												<Grid item key={ `${post.node.id}${tag}` }>
 													<Avatar
 														alt={ tag }
@@ -88,7 +98,7 @@ class IndexPage extends Component {
 									<Grid item xs={ 12 }>
 										<Grid container>
 											<Grid item xs={ 12 }>
-												{post.node.frontmatter.snippet}
+												{ post.node.snippet.snippet }
 											</Grid>
 										</Grid>
 									</Grid>
@@ -105,21 +115,18 @@ class IndexPage extends Component {
 };
 
 export const listQuery = graphql`
-    query IndexQuery {
-        allMarkdownRemark(
-            filter: {frontmatter: {published: {eq: true }}}
-            sort: {fields: [frontmatter___date],order:DESC}
-        ){
+    query PageIndexQuery {
+        allContentfulPost{
             edges{
                 node{
                     id
-                    frontmatter{
-                        path
-                        title
-                        date
-                        about
-                        tags
-	                    snippet
+                    title
+                    slug
+                    focus
+                    date
+                    tags
+                    snippet{
+                        snippet
                     }
                 }
             }

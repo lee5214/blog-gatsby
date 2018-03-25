@@ -1,62 +1,46 @@
 import React from 'react';
 import styled from 'styled-components';
-import {withStyles} from 'material-ui/styles'
-import postTemplateStyle from '../styles/postTemplateStyle'
+import { withStyles } from 'material-ui/styles';
+import postTemplateStyle from '../styles/postTemplateStyle';
 
-const DetailFront = styled.div`
-	
-`;
-const MDContentWrapper = styled.div`
-	> h1, h2, h3, h4 {
-		margin-top: 2.5rem;
-	}
-	text-align: justify;
-`;
-const TagContainer = styled.div`
-	display: flex;
-	justify-content: start;
-	flex-wrap: wrap;
-`;
-const Tag = styled.span`
-	background: #72fffa;
-	padding: 0  .5rem;
-	margin-right: 1rem;
-`;
-const  PostTemplate= ({data,classes}) =>{
-	const {markdownRemark : post} = data;
+const PostTemplate = ({data, classes}) => {
+	const {contentfulPost : post} = data;
 	return (
 		<div>
-			<div className={classes.detailFront}>
-				<h1>{ post.frontmatter.title }</h1>
-				<p>{ post.frontmatter.date }</p>
-				<TagContainer>
-					{ post.frontmatter.tags.map ((tag) =>
+			<div className={ classes.detailFront }>
+				<h1>{ post.title }</h1>
+				<p>{ post.date }</p>
+				<div className={classes.tagContainer}>
+					{ post.tags.map ((tag) =>
 						(
-							<Tag key={ post.id + tag }>{ tag }</Tag>
+							<span className={classes.tag} key={ post.id + tag }>{ tag }</span>
 						),
 					) }
-				</TagContainer>
+				</div>
 			</div>
-			<MDContentWrapper
-				className={classes.roboto}
-				dangerouslySetInnerHTML={ {__html : post.html} }/>
+			<div
+				className={ classes.markdownContentWrapper }
+				dangerouslySetInnerHTML={ {__html : post.body.childMarkdownRemark.html} }
+			/>
+			<h1>{ post.id }</h1>
 		</div>
 	);
-}
-export default withStyles(postTemplateStyle)(PostTemplate)
-
+};
+export default withStyles (postTemplateStyle) (PostTemplate);
 export const postQuery = graphql`
-    query BlogPostByPath($path: String!){
-        markdownRemark(
-            frontmatter: {path: {eq: $path}}
+    query BlogPostByPath($slug: String!){
+        contentfulPost(
+            slug: {eq: $slug}
         ){
             id
-            html
-            frontmatter {
-                path
-                title
-                date
-                tags
+            slug
+            title
+            date
+            tags
+            body{
+                childMarkdownRemark{
+                    html
+                }
             }
         }
     }

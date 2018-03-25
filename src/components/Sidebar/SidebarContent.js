@@ -85,28 +85,25 @@ class SidebarContent extends Component {
 		return (
 			<ListItem button
 			          component={ Link }
-			          to={ post.node.frontmatter.path }
+			          to={ post.node.slug }
 			          key={ `sidebarlink-${post.node.id}` }
-			          className={ ` ${classes.itemLink} ${this.activeRoute (post.node.frontmatter.path) ? classes[themeColor] : ''}` }>
+			          className={ ` ${classes.itemLink} ${this.activeRoute (post.node.slug) ? classes[themeColor] : ''}` }>
 				<ListItemText className={ classes.buttonText }
 				              primary={
 					              <Typography type={ 'body2' } className={ classes.buttonTextPrimary }>
-						              { post.node.frontmatter.title }
+						              { post.node.title }
 					              </Typography>
 				              }
 				              secondary={
 					              <span>
-								{ moment (post.node.frontmatter.date, 'MM-DD-YYYY').fromNow () }
+								{ moment (post.node.date).fromNow () }
 							</span>
-
 				              }
 				/>
 			</ListItem>
 		);
 	};
-
 	render () {
-		//const logo = '/static/logo_simple_white.png';
 		const content = '';
 		const {classes, posts} = this.props;
 		return (
@@ -132,7 +129,6 @@ class SidebarContent extends Component {
 		);
 	}
 }
-
 SidebarContent.propTypes = {
 	posts : PropTypes.array,
 };
