@@ -1,6 +1,6 @@
 import { container, defaultLink, drawerWidth, transition } from './styles.jsx';
 
-const indexPageStyle = theme => ({
+const indexPageStyle = (theme) => ({
 	wrapper : {
 		position : 'relative',
 		top : '0',

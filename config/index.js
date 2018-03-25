@@ -1,0 +1,5 @@
+module.exports = {
+	CONTENTFUL_SPACE_ID : '5smkipbj19p3',
+	CONTENTFUL_ACCESS_TOKEN : '6a9c16981add68e02b1d9ecacb4698aec5c42a553d368a9c4116dec488572dec'
+
+}

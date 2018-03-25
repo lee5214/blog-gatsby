@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { withStyles } from 'material-ui/styles';
 import postTemplateStyle from '../styles/postTemplateStyle';
-
+import moment from 'moment';
 const PostTemplate = ({data, classes}) => {
 	const {contentfulPost : post} = data;
 	return (
 		<div>
 			<div className={ classes.detailFront }>
 				<h1>{ post.title }</h1>
-				<p>{ post.date }</p>
+				<p>{ moment(post.date).format('MMMM DD YYYY') }</p>
 				<div className={classes.tagContainer}>
 					{ post.tags.map ((tag) =>
 						(

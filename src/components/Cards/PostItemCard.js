@@ -3,14 +3,14 @@ import moment from 'moment';
 import { Card, CardActions, CardContent, CardHeader, Typography, withStyles } from 'material-ui';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import postItemCardStyle from '../../styles/postItemCardStyle';
+import postItemCardStyle from '../../styles/components/postItemCardStyle';
 
 function PostItemCard ({...props}) {
 	const {
 		classes,
 		postDate,
 		title,
-		small,
+		seriesNumber,
 		iconColor,
 		postLink,
 	} = props;
@@ -25,7 +25,7 @@ function PostItemCard ({...props}) {
 			/>
 			<CardContent className={ classes.cardContent }>
 				<Typography component='p' className={ classes.cardCategory }>
-					{ moment (postDate).format( 'MMMM DD YYYY') }
+					{ moment (postDate).format ('MMMM DD YYYY') }
 				</Typography>
 				<Typography
 					variant='headline'
@@ -34,8 +34,8 @@ function PostItemCard ({...props}) {
 				>
 					<Link to={ postLink } className={ classes.cardTitleLink }>
 						{ title }
-						{ small !== undefined ? (
-							<small className={ classes.cardTitleSmall }>{ small }</small>
+						{ seriesNumber !== null ? (
+							<small className={ classes.cardTitleSmall }>{ `#${seriesNumber}` }</small>
 						) : null }
 					</Link>
 
@@ -61,7 +61,7 @@ PostItemCard.propTypes = {
 	iconColor : PropTypes.oneOf (['orange', 'green', 'red', 'blue', 'purple']),
 	postDate : PropTypes.node,
 	title : PropTypes.node,
-	small : PropTypes.node,
+	seriesNumber : PropTypes.node,
 	postLink : PropTypes.string.isRequired,
 };
 

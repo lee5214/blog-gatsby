@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { Drawer, Hidden, Modal } from 'material-ui';
 import SidebarContent from './SidebarContent';
 import { withStyles } from 'material-ui/styles';
-import sidebarStyle from '../../styles/sidebarStyle';
+import sidebarStyle from '../../styles/components/sidebarStyle';
 
 class Sidebar extends Component {
 
 	render () {
 		const {mobileOpen, handleDrawerToggle, classes, posts, themeColor} = this.props;
 		return (
-			<div className={ classes.container }>
+			<div>
 
 				<Hidden mdUp>
 					<Modal
@@ -25,7 +25,7 @@ class Sidebar extends Component {
 						//  keepMounted : true, // Better open performance on mobile.
 						//  } }
 					>
-						<div className={ classes.drawerPaper }>
+						<div className={ `${classes.drawerPaper} ${classes.drawerPaperMobile}` }>
 							<div className={ classes.paperOverlay }/>
 							<SidebarContent posts={ posts }
 							                themeColor={ themeColor }

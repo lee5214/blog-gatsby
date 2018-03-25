@@ -1,7 +1,3 @@
-// ##############################
-// // // Header styles
-// #############################
-
 import {
   container,
   defaultFont,
@@ -11,7 +7,7 @@ import {
   successColor,
   warningColor,
   dangerColor
-} from "variables/styles";
+} from "../styles";
 
 const headerStyle = theme => ({
   appBar: {

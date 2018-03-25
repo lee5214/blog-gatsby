@@ -75,7 +75,7 @@ class IndexPage extends Component {
 								postDate={ post.node.date }
 								title={ post.node.title }
 								postLink={ post.node.slug }
-								small={'#1'}
+								seriesNumber={post.node.seriesNumber}
 							>
 								<Grid container>
 									<Grid item xs={ 12 }>
@@ -125,6 +125,7 @@ export const listQuery = graphql`
                     focus
                     date
                     tags
+                    seriesNumber
                     snippet{
                         snippet
                     }

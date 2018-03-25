@@ -7,7 +7,7 @@ import { createMuiTheme, withStyles } from 'material-ui/styles';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Typography from 'material-ui/Typography';
-import sidebarStyle from '../../styles/sidebarContentStyle';
+import sidebarStyle from '../../styles/components/sidebarContentStyle';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import logo from '../../assets/logo_simple_white.png';

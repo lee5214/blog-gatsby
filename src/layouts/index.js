@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
-import Header from '../components/Header';
+import ContentHeader from '../components/ContentHeader';
 import { withStyles } from 'material-ui/styles';
 import 'prismjs/themes/prism-tomorrow.css';
 import Sidebar from '../components/Sidebar';
@@ -10,62 +9,16 @@ import Sidebar from '../components/Sidebar';
 import Link from 'gatsby-link';
 import { AppBar, Badge, IconButton, Tab, Tabs, Toolbar } from 'material-ui';
 import Typography from 'material-ui/Typography';
-import HomeIcon from 'material-ui-icons/Home';
 import MenuIcon from 'material-ui-icons/Menu';
-import PersonIcon from 'material-ui-icons/Person';
-import PhoneIcon from 'material-ui-icons/Phone';
 import logo from '../assets/logo_simple_black.png';
+import layoutStyle from '../styles/layoutStyle';
+import Read from '../assets/icons/Read.svg';
+import ID from '../assets/icons/ID.svg';
+import Drone from '../assets/icons/Drone.svg';
+
 //import '../styles/index.css';
-const drawerWidth = 300;
-const styles = (theme) => ({
-	root : {
-		flexGrow : 1,
-		height : 'calc(100vh - 16px)',
-		zIndex : 1,
-		position : 'relative',
-		display : 'flex',
-	},
-	appBar : {
-		background : 'white',
-		color : 'black',
-		position : 'absolute',
-		marginLeft : drawerWidth,
-		[theme.breakpoints.up ('md')] : {
-			width : `calc(100% - ${drawerWidth}px)`,
-		},
-	},
-	navIconHide : {
 
-		[theme.breakpoints.up ('md')] : {
-			display : 'none',
-		},
-	},
-	content : {
-		width : '100%',
-		overflow : 'scroll',
-		flexGrow : 1,
-		backgroundColor : theme.palette.background.default,
-		padding : theme.spacing.unit * 3,
-	},
-	tabBadge : {
-		'& > span' : {
-			top : 0,
-			right : -24,
-			backgroundColor : 'transparent',
-			color : 'black',
-		},
-	},
-
-});
-
-const PostBlock = styled.div`
-	margin : 0 auto;
-	max-width : 960px;
-	padding : 0px .0875rem 1.45rem;
-	padding-top : 0
-`;
-
-class TemplateWrapper extends Component {
+class Layout extends Component {
 
 	constructor (props) {
 		super (props);
@@ -119,21 +72,28 @@ class TemplateWrapper extends Component {
 					      value={ this.state.tabNum }
 					      onChange={ this.handleTabChange }
 					>
-						<Tab label={
-							<Badge className={ classes.tabBadge } color="secondary"
-							       badgeContent={ `${ posts.length }P` }>
-								<HomeIcon>Home</HomeIcon>
-							</Badge>
-						}
+						<Tab
+							label={'Blog'}
+							icon={
+								<Badge className={ classes.tabBadge } color="secondary"
+								       badgeContent={ `${posts.length}P` }>
+									{ /*<ReadIcon>Home</ReadIcon>*/ }
+									<img className={ classes.tabIcon } src={ Read }/>
+								</Badge>
+							}
+							component={ Link }
+							to={ '/' }
+						/>
+						<Tab label={'About'}
+							icon={ <img className={ classes.tabIcon } src={ ID }/> }
 						     component={ Link }
-						     to={ '/' }/>
-						<Tab label={ <PersonIcon>About</PersonIcon> }
+						     to={ '/about' }
+						/>
+						<Tab label={ 'Find Me' }
+						     icon={<img className={ classes.tabIcon } src={ Drone }/>}
 						     component={ Link }
-						     to={ '/about' }/>/>
-
-						<Tab label={ <PhoneIcon>Contact</PhoneIcon> }
-						     component={ Link }
-						     to={ '/contact' }/>/>
+						     to={ '/contact' }
+						/>
 					</Tabs>
 				</AppBar>
 
@@ -144,18 +104,18 @@ class TemplateWrapper extends Component {
 				         themeColor={ themeColor }
 				         location={ location }
 				/>
-				<main className={ classes.content }>
-					<Header/>
-					<PostBlock>
+				<main className={ classes.MainContent }>
+					<ContentHeader/>
+					<div className={ classes.postBlock }>
 						{ this.props.children () }
-					</PostBlock>
+					</div>
 				</main>
 			</div>
 		);
 	}
 }
 
-TemplateWrapper.propTypes = {
+Layout.propTypes = {
 	children : PropTypes.func,
 };
 
@@ -171,10 +131,9 @@ export const query = graphql`
                     date
                     tags
                     title
-                    date
                 }
             }
         }
     }
 `;
-export default withStyles (styles) (TemplateWrapper);
+export default withStyles (layoutStyle) (Layout);

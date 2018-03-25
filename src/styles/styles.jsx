@@ -133,6 +133,10 @@ const defaultLink = {
 	color: 'rgba(0,0,0,0.6)',
 }
 
+const defaultHeight = {
+	height: 'calc(100vh - 2rem)',
+}
+
 export {
 	//variables
 	drawerWidth,
@@ -164,4 +168,5 @@ export {
 	defaultBoxShadow,
 
 	defaultLink,
+	defaultHeight
 };

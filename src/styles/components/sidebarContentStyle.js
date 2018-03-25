@@ -1,7 +1,3 @@
-// ##############################
-// // // Sidebar styles
-// #############################
-
 import {
 	boxShadow,
 	dangerColor,
@@ -13,7 +9,7 @@ import {
 	successColor,
 	transition,
 	warningColor,
-} from './styles';
+} from '../styles';
 
 const sidebarContentStyle = theme => ({
 	buttonText : {

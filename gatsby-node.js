@@ -1,9 +1,8 @@
 const path = require (`path`);
-
 exports.createPages = ({boundActionCreators, graphql}) => {
 	const {createPage} = boundActionCreators;
+	const postTemplate = path.resolve ('src/templates/postTemplate.js');
 	return new Promise ((resolve, reject) => {
-		const postTemplate = path.resolve ('src/templates/postTemplate.js');
 		resolve (
 			graphql (`{
 					allContentfulPost{
@@ -22,7 +21,7 @@ exports.createPages = ({boundActionCreators, graphql}) => {
 				}
 				result.data.allContentfulPost.edges.forEach ((edge) => {
 					createPage ({
-						path : edge.node.slug,//node.slug,//node.frontmatter.path,
+						path : edge.node.slug,
 						component : postTemplate,
 						context : {
 							slug : edge.node.slug,

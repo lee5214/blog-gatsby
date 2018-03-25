@@ -12,7 +12,7 @@ import {
 	purpleCardHeader,
 	redCardHeader,
 	whiteCardHeader,
-} from './styles';
+} from '../styles';
 
 const postItemCardStyle = theme => ({
 	card,
@@ -49,7 +49,7 @@ const postItemCardStyle = theme => ({
 		...defaultFont,
 	},
 	cardTitle : {
-		margin : '2rem 0 .5rem',
+		margin : '1.5rem 0 .5rem',
 		...defaultFont,
 		fontSize : '1.425em',
 		fontWeight : '400',
@@ -61,7 +61,7 @@ const postItemCardStyle = theme => ({
 		lineHeight : '1',
 		color : 'black',
 		background : 'white',
-		padding : '.1rem',
+		padding : '.1rem .4rem',
 		margin : '.1rem .4rem',
 	},
 	cardActions : {
