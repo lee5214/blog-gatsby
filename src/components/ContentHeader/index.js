@@ -24,9 +24,11 @@ const Header = () => (
 		<HeaderContainer>
 		</HeaderContainer>
 		<HeaderNav>
-			<Button>
+
+			{/*<Button>
 				<Link to={ '/' }>Home</Link>
 			</Button>
+
 			<Button color="inherit">
 				<Link to={ '/about' }
 				      activeStyle={ {
@@ -35,7 +37,8 @@ const Header = () => (
 				>
 					About
 				</Link>
-			</Button>
+			</Button>*/}
+
 		</HeaderNav>
 	</HeaderWrapper>
 );

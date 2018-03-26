@@ -40,8 +40,8 @@ module.exports = {
 		{
 			resolve : `gatsby-source-contentful`,
 			options : {
-				spaceId : process.env.CONTENTFUL_SPACE_ID || require ('./config').CONTENTFUL_SPACE_ID,
-				accessToken : require ('./config').CONTENTFUL_ACCESS_TOKEN,
+				spaceId : require ('./config/credentials').CONTENTFUL_SPACE_ID,
+				accessToken : require ('./config/credentials').CONTENTFUL_ACCESS_TOKEN,
 				//host: `preview.contentful.com`,
 			},
 		},

@@ -1,8 +1,8 @@
 import React from 'react';
-
+import MessageWall from '../components/Wall/MessageWall'
 const About = () => {
 	return (
-		<div>About</div>
+		<MessageWall />
 	);
 };
 export default About;
