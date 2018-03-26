@@ -56,15 +56,15 @@ const logosList = {
  */
 class IndexPage extends Component {
 
-	generateTagAvatar = (tag, fill) => {
+	generateTagAvatar = (tag, fillColor) => {
 		let tagComponent = logosList[tag];
-		return tagComponent ? <tagComponent.icon fill={fill}/> : null;
+		return tagComponent ? <tagComponent.icon fill={fillColor}/> : null;
 	};
 
 	render () {
 		const {data, classes} = this.props;
 		const {edges : posts} = data.allContentfulPost;
-		const fill = 'white';
+		const fillColor = 'red';
 
 		return (
 			<Grid container>
@@ -89,7 +89,7 @@ class IndexPage extends Component {
 														alt={ tag }
 														className={ classes.tagAvatar }
 													>
-														{ this.generateTagAvatar (tag, fill) }
+														{ this.generateTagAvatar (tag, fillColor) }
 													</Avatar>
 												</Grid>
 											)) }

@@ -29,7 +29,7 @@ module.exports = {
 			resolve : `gatsby-plugin-google-fonts`,
 			options : {
 				fonts : [
-					`Montserrat\:300,400,500`,
+					`Montserrat:300,400,500`,
 					`Roboto:300,400,500`,
 					`Audiowide`,
 					`Unica One`,

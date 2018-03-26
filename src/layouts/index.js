@@ -64,8 +64,8 @@ class Layout extends Component {
 							>
 								<MenuIcon/>
 							</IconButton>
-							<Typography variant="display3" color="inherit" noWrap>
-								Posts
+							<Typography variant="display1" color="inherit" noWrap>
+								{this.props.location.pathname.replace('/','').replace(/-/g,' ')}
 							</Typography>
 						</Toolbar>
 						<Divider style={{background:'white'}}/>
