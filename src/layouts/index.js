@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import ContentHeader from '../components/ContentHeader';
-import { withStyles } from 'material-ui/styles';
+import { createMuiTheme, MuiThemeProvider, withStyles } from 'material-ui/styles';
 import 'prismjs/themes/prism-tomorrow.css';
 import Sidebar from '../components/Sidebar';
 
@@ -15,7 +15,7 @@ import layoutStyle from '../styles/layoutStyle';
 import Read from '../assets/icons/Read.svg';
 import ID from '../assets/icons/ID.svg';
 import Drone from '../assets/icons/Drone.svg';
-
+import globalTheme from '../styles/themes/globalTheme'
 //import '../styles/index.css';
 
 class Layout extends Component {
@@ -41,76 +41,78 @@ class Layout extends Component {
 		const {edges : posts} = this.props.data.allContentfulPost;
 		const themeColor = 'blue';
 		return (
-			<div className={ classes.root }>
-				<Helmet
-					title="Cong Li' s Blog"
-					meta={ [
-						{name : 'description', content : 'a blog of full stack learning experience'},
-						{name : 'keywords', content : ' gatsby,react,redux,graphql,styled component,markdown'},
+			<MuiThemeProvider theme={ globalTheme }>
+				<div className={ classes.root }>
+					<Helmet
+						title="Cong Li' s Blog"
+						meta={ [
+							{name : 'description', content : 'a blog of full stack learning experience'},
+							{name : 'keywords', content : ' gatsby,react,redux,graphql,styled component,markdown'},
 
-					] }
-				>
-					<link rel='shortcut icon' type='image/png' href={ `${logo}` }/>
-				</Helmet>
-
-				<AppBar className={ classes.appBar }>
-					<Toolbar>
-						<IconButton
-							color='inherit'
-							aria-label='open drawer'
-							onClick={ this.handleDrawerToggle }
-							className={ classes.navIconHide }
-						>
-							<MenuIcon/>
-						</IconButton>
-						<Typography variant="subheading" color="inherit" noWrap>
-							Posts
-						</Typography>
-					</Toolbar>
-
-					<Tabs centered
-					      value={ this.state.tabNum }
-					      onChange={ this.handleTabChange }
+						] }
 					>
-						<Tab
-							label={'Blog'}
-							icon={
-								<Badge className={ classes.tabBadge } color="secondary"
-								       badgeContent={ `${posts.length}P` }>
-									{ /*<ReadIcon>Home</ReadIcon>*/ }
-									<img className={ classes.tabIcon } src={ Read }/>
-								</Badge>
-							}
-							component={ Link }
-							to={ '/' }
-						/>
-						<Tab label={'About'}
-							icon={ <img className={ classes.tabIcon } src={ ID }/> }
-						     component={ Link }
-						     to={ '/about' }
-						/>
-						<Tab label={ 'Find Me' }
-						     icon={<img className={ classes.tabIcon } src={ Drone }/>}
-						     component={ Link }
-						     to={ '/contact' }
-						/>
-					</Tabs>
-				</AppBar>
+						<link rel='shortcut icon' type='image/png' href={ `${logo}` }/>
+					</Helmet>
+
+					<AppBar className={ classes.appBar }>
+						<Toolbar>
+							<IconButton
+								color='inherit'
+								aria-label='open drawer'
+								onClick={ this.handleDrawerToggle }
+								className={ classes.navIconHide }
+							>
+								<MenuIcon/>
+							</IconButton>
+							<Typography variant="subheading" color="inherit" noWrap>
+								Posts
+							</Typography>
+						</Toolbar>
+
+						<Tabs centered
+						      value={ this.state.tabNum }
+						      onChange={ this.handleTabChange }
+						>
+							<Tab
+								label={ 'Blog' }
+								icon={
+									<Badge className={ classes.tabBadge } color="secondary"
+									       badgeContent={ `${posts.length}P` }>
+										{ /*<ReadIcon>Home</ReadIcon>*/ }
+										<img className={ classes.tabIcon } src={ Read }/>
+									</Badge>
+								}
+								component={ Link }
+								to={ '/' }
+							/>
+							<Tab label={ 'About' }
+							     icon={ <img className={ classes.tabIcon } src={ ID }/> }
+							     component={ Link }
+							     to={ '/about' }
+							/>
+							<Tab label={ 'Find Me' }
+							     icon={ <img className={ classes.tabIcon } src={ Drone }/> }
+							     component={ Link }
+							     to={ '/contact' }
+							/>
+						</Tabs>
+					</AppBar>
 
 
-				<Sidebar mobileOpen={ this.state.mobileOpen }
-				         handleDrawerToggle={ this.handleDrawerToggle }
-				         posts={ posts }
-				         themeColor={ themeColor }
-				         location={ location }
-				/>
-				<main className={ classes.MainContent }>
-					<ContentHeader/>
-					<div className={ classes.postBlock }>
-						{ this.props.children () }
-					</div>
-				</main>
-			</div>
+					<Sidebar mobileOpen={ this.state.mobileOpen }
+					         handleDrawerToggle={ this.handleDrawerToggle }
+					         posts={ posts }
+					         themeColor={ themeColor }
+					         location={ location }
+					/>
+					<main className={ classes.MainContent }>
+						<ContentHeader/>
+						<div className={ classes.postBlock }>
+							{ this.props.children () }
+						</div>
+					</main>
+				</div>
+			</MuiThemeProvider>
 		);
 	}
 }
@@ -131,6 +133,7 @@ export const query = graphql`
                     date
                     tags
                     title
+                    seriesNumber
                 }
             }
         }

@@ -11,7 +11,7 @@ const layoutStyle = (theme) => ({
 		borderRadius : '1rem',
 	},
 	appBar : {
-		background : '#343434',
+		//background : '#343434',
 		color : 'white',
 		position : 'absolute',
 		marginLeft : drawerWidth,

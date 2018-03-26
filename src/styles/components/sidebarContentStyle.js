@@ -15,13 +15,18 @@ const sidebarContentStyle = theme => ({
 	buttonText : {
 		margin: '10px, 0',
 		padding : 0,
-		textAlign : 'right',
 	},
 	buttonTextPrimary : {
 		fontWeight: 400,
-		color : 'white',
-		textAlign : 'left',
+		textAlign : 'center',
 		fontFamily : 'Montserrat',
+
+	},
+	buttonTextSecondary : {
+		display:'block',
+		fontWeight: 400,
+		textAlign : 'center',
+		fontFamily : 'Roboto',
 
 	},
 	headerDivider : {
@@ -83,6 +88,10 @@ const sidebarContentStyle = theme => ({
 		position : 'relative',
 		padding : '15px 15px',
 		zIndex : '4',
+		transition: '.25s ease-in-out .25s',
+		'&:hover': {
+			transform: 'rotate(-30deg)',
+		}
 	},
 	logoLink : {
 		...defaultFont,
@@ -99,7 +108,7 @@ const sidebarContentStyle = theme => ({
 			color : '#FFFFFF',
 		},
 	},
-	logoImage : {
+	logoImageContainer : {
 		margin : '0 auto',
 		width : '30px',
 		display : 'inline-block',
@@ -107,9 +116,10 @@ const sidebarContentStyle = theme => ({
 		marginLeft : '10px',
 		marginRight : '15px',
 	},
-	img : {
+	logoImg : {
+		transform: 'translateY(-50%)',
+		top: '50%',
 		width : '35px',
-		top : '22px',
 		position : 'absolute',
 		verticalAlign : 'middle',
 		border : '0',

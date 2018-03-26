@@ -33,7 +33,7 @@ module.exports = {
 					`Roboto:300,400,500`,
 					`Teko:300,400,500,600,700`,
 					`Audiowide`,
-					`Unica\+One`,
+					`Unica+One`,
 				],
 			},
 		},

@@ -8,7 +8,7 @@ const PostTemplate = ({data, classes}) => {
 	return (
 		<div>
 			<div className={ classes.detailFront }>
-				<h1>{ post.title }</h1>
+				<h1 className={classes.title}>{ post.title }</h1>
 				<p>{ moment (post.date).format ('MMMM DD YYYY') }</p>
 				<div className={ classes.tagContainer }>
 					{ post.tags.map ((tag) =>
@@ -26,6 +26,7 @@ const PostTemplate = ({data, classes}) => {
 	);
 };
 export default withStyles (postTemplateStyle) (PostTemplate);
+
 export const postQuery = graphql`
     query BlogPostByPath($slug: String!){
         contentfulPost(

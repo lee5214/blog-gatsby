@@ -56,14 +56,16 @@ const logosList = {
  */
 class IndexPage extends Component {
 
-	generateTagAvatar = (tag) => {
+	generateTagAvatar = (tag, fill) => {
 		let tagComponent = logosList[tag];
-		return tagComponent ? <tagComponent.icon/> : null;
+		return tagComponent ? <tagComponent.icon fill={fill}/> : null;
 	};
 
 	render () {
 		const {data, classes} = this.props;
 		const {edges : posts} = data.allContentfulPost;
+		const fill = 'white';
+
 		return (
 			<Grid container>
 				{ posts.map ((post) => {
@@ -75,7 +77,7 @@ class IndexPage extends Component {
 								postDate={ post.node.date }
 								title={ post.node.title }
 								postLink={ post.node.slug }
-								seriesNumber={post.node.seriesNumber}
+								seriesNumber={ post.node.seriesNumber }
 							>
 								<Grid container>
 									<Grid item xs={ 12 }>
@@ -87,7 +89,7 @@ class IndexPage extends Component {
 														alt={ tag }
 														className={ classes.tagAvatar }
 													>
-														{ this.generateTagAvatar (tag) }
+														{ this.generateTagAvatar (tag, fill) }
 													</Avatar>
 												</Grid>
 											)) }
@@ -103,7 +105,6 @@ class IndexPage extends Component {
 										</Grid>
 									</Grid>
 								</Grid>
-
 							</PostItemCard>
 						</ItemGrid>
 

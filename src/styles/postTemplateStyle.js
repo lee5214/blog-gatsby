@@ -4,15 +4,17 @@ const postTemplateStyle = {
 		padding : '1rem',
 		marginBottom : '1rem',
 		fontFamily : 'Montserrat',
+		fontWeight: 400,
 	},
-	roboto : {
-		fontFamily : 'roboto',
+	title : {
+		fontFamily : 'audiowide',
 	},
 	markdownContentWrapper : {
 		fontFamily : 'roboto',
 		textAlign : 'justify',
 		'& > h1,h2,h3,h4' : {
 			marginTop : '2.5rem',
+			fontFamily : 'roboto',
 		},
 	},
 	tagContainer : {

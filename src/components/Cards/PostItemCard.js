@@ -38,7 +38,6 @@ function PostItemCard ({...props}) {
 							<small className={ classes.cardTitleSmall }>{ `#${seriesNumber}` }</small>
 						) : null }
 					</Link>
-
 				</Typography>
 			</CardContent>
 			<CardActions className={ classes.cardActions }>
