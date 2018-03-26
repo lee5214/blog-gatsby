@@ -14,7 +14,7 @@ const postTemplateStyle = {
 		textAlign : 'justify',
 		'& > h1,h2,h3,h4' : {
 			marginTop : '2.5rem',
-			fontFamily : 'roboto',
+			fontFamily : 'audiowide',
 		},
 	},
 	tagContainer : {
