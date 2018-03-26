@@ -7,7 +7,7 @@ import 'prismjs/themes/prism-tomorrow.css';
 import Sidebar from '../components/Sidebar';
 
 import Link from 'gatsby-link';
-import { AppBar, Badge, IconButton, Tab, Tabs, Toolbar } from 'material-ui';
+import { AppBar, Badge, IconButton, Tab, Tabs, Toolbar, Divider } from 'material-ui';
 import Typography from 'material-ui/Typography';
 import MenuIcon from 'material-ui-icons/Menu';
 import logo from '../assets/logo_simple_black.png';
@@ -64,11 +64,11 @@ class Layout extends Component {
 							>
 								<MenuIcon/>
 							</IconButton>
-							<Typography variant="subheading" color="inherit" noWrap>
+							<Typography variant="display3" color="inherit" noWrap>
 								Posts
 							</Typography>
 						</Toolbar>
-
+						<Divider style={{background:'white'}}/>
 						<Tabs centered
 						      value={ this.state.tabNum }
 						      onChange={ this.handleTabChange }
