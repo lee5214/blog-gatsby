@@ -1,5 +1,4 @@
 import React from 'react';
-
 const Contact = () => {
 	return(
 		<div>
@@ -9,6 +8,9 @@ const Contact = () => {
 				Linkedin Icon
 			</div>
 			<form name="contact" method="POST" data-netlify='true' data-netlify-honeypot='bot-field'>
+				{/*<p style={{visibility:'hidden'}}>
+					<label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+				</p>
 				<p>
 					<label>Your Name: <input type="text" name="name" /></label>
 				</p>
@@ -17,10 +19,11 @@ const Contact = () => {
 				</p>
 				<p>
 					<label>Message: <textarea name="message"></textarea></label>
-				</p>
-				<div netlify-recaptcha></div>
+				</p>*/}
+
+				<input name="name" type="text"/>
 				<p>
-					<button type="submit">Send</button>
+					<button>Send</button>
 				</p>
 			</form>
 		</div>
