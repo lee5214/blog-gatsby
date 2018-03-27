@@ -26,7 +26,6 @@ const muiTheme = createMuiTheme ({
 		},
 		MuiTab : {
 			textColorInherit : {
-
 				color : 'white',
 			},
 			labelIcon : {
@@ -40,13 +39,13 @@ const muiTheme = createMuiTheme ({
 		},
 		MuiListItem : {
 			button : {
-				color : 'white !important',
 				'&:hover' : {
-					color : 'primary',
+					color : 'white !important',
 					opacity : 1,
 				},
 			},
 		},
+
 		MuiSvgIcon : {
 			root : {
 				'&:hover' : {
