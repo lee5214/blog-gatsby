@@ -17,7 +17,7 @@ import ID from '../assets/icons/ID.svg';
 import Drone from '../assets/icons/Drone.svg';
 import globalTheme from '../styles/themes/globalTheme';
 
-//import '../styles/index.css';
+import '../styles/index.css';
 
 class Layout extends Component {
 

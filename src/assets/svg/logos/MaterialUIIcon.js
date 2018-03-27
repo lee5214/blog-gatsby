@@ -1,12 +1,9 @@
 import React from 'react';
 import SvgIcon from 'material-ui/SvgIcon';
-const style = {
-	width: 24,
-	height: 24,
-}
+
 const MaterialUIIcon = (props) => {
 	return (
-		<SvgIcon { ...props } viewBox={ '0 0 256 208' } className={style} style={ {fill : `${props.fill}` || '#D6D6D6'} }>
+		<SvgIcon { ...props } viewBox={ '0 0 256 208' } style={ {fill : `${props.fill}` || '#D6D6D6'} }>
 			<g>
 				<path d="M15.624 35.012v87.53l15.058-8.471V43.482l-15.058-8.47z" style={ {fill : `${props.fill}` || '#949494' }}/>
 				<path d="M.565 114.07V8.66l89.411 50.823v17.883L15.624 35.012v87.53L.564 114.07z" style={ {fill : `${props.fill}` || '#EFEFEF' }}/>

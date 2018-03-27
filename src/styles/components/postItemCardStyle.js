@@ -82,10 +82,13 @@ const postItemCardStyle = theme => ({
 
 		textAlign : 'center',
 		[theme.breakpoints.up ('lg')] : {
-			fontSize : '1.25rem',
+			fontSize : '1rem',
 		},
 		[theme.breakpoints.down ('md')] : {
-			fontSize : '1rem',
+			fontSize : '1.25rem',
+		},
+		[theme.breakpoints.down ('xs')] : {
+			fontSize : '.75rem',
 		},
 	},
 });
