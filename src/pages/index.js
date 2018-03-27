@@ -94,7 +94,7 @@ class IndexPage extends Component {
 														alt={ tag }
 														className={ classes.tagAvatar }
 													>
-														{/*{ this.generateTagAvatar (tag, tagFillColor) }*/}
+														{ this.generateTagAvatar (tag, tagFillColor) }
 													</Avatar>
 												</Grid>
 											)) }
