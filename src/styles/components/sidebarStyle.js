@@ -1,12 +1,12 @@
-import { drawerWidth, defaultHeight} from '../styles';
+import { defaultHeight, drawerWidth } from '../styles';
 
 const sidebarStyle = theme => ({
 	paperOverlay : {
 		width : drawerWidth,
 		height : '100%',
-		background : 'white',
+		background : 'black',
 		position : 'absolute',
-		opacity : .2,
+		opacity : .6,
 		zIndex : -1,
 	},
 	drawerPaper : {
@@ -20,12 +20,12 @@ const sidebarStyle = theme => ({
 		backgroundPosition : '50% 50%',
 		backgroundRepeat : 'no-repeat',
 		backgroundSize : 'cover',
-		borderRight: '1px solid white',
+		borderRight : '1px solid white',
 	},
 	drawerPaperMobile : {
-		height: '100vh',
-		border: 'none',
-	}
+		height : '100vh',
+		border : 'none',
+	},
 });
 
 export default sidebarStyle;

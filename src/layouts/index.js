@@ -88,7 +88,9 @@ class Layout extends Component {
 							/>
 							<Tab label={ 'About' }
 							     icon={
-								     <Badge className={ classes.tabBadge } color="secondary">
+								     <Badge className={ classes.tabBadge } color="secondary"
+								            badgeContent={''}
+								     >
 									     <img className={ classes.tabIcon } src={ ID }/>
 								     </Badge>
 							     }
@@ -97,7 +99,9 @@ class Layout extends Component {
 							/>
 							<Tab label={ 'Find Me' }
 							     icon={
-								     <Badge className={ classes.tabBadge } color="secondary">
+								     <Badge className={ classes.tabBadge } color="secondary"
+								            badgeContent={''}
+								     >
 									     <img className={ classes.tabIcon } src={ Drone }/>
 								     </Badge> }
 							     component={ Link }
@@ -105,7 +109,6 @@ class Layout extends Component {
 							/>
 						</Tabs>
 					</AppBar>
-
 
 					<Sidebar mobileOpen={ this.state.mobileOpen }
 					         handleDrawerToggle={ this.handleDrawerToggle }

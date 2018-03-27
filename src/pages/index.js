@@ -71,7 +71,7 @@ class IndexPage extends Component {
 			<Grid container>
 				{ posts.map ((post) => {
 					return (
-						<ItemGrid xs={ 12 } sm={ 6 } md={ 6 } key={ post.node.id }>
+						<ItemGrid xs={ 12 } sm={ 12 } md={ 12 } lg={6} key={ post.node.id }>
 							<PostItemCard
 								icon={ logosList[`${post.node.focus}`].icon }
 								iconColor={ logosList[`${post.node.focus}`].bgColor }
