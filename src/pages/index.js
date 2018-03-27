@@ -48,6 +48,10 @@ const logosList = {
 	},
 };
 
+const style = {
+	width: 24,
+	height: 24,
+}
 /**
  * @param tag is a string got from markdown frontmatter
  * @returns component Avatar
