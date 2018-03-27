@@ -79,7 +79,6 @@ class Layout extends Component {
 								icon={
 									<Badge className={ classes.tabBadge } color="secondary"
 									       badgeContent={ `${posts.length}P` }>
-										{ /*<ReadIcon>Home</ReadIcon>*/ }
 										<img className={ classes.tabIcon } src={ Read }/>
 									</Badge>
 								}
@@ -117,7 +116,7 @@ class Layout extends Component {
 					         location={ location }
 					/>
 					<main className={ classes.MainContent }>
-						<ContentHeader/>
+						{/*<ContentHeader/>*/}
 						<div className={ classes.postBlock }>
 							{ this.props.children () }
 						</div>
