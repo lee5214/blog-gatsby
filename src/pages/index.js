@@ -64,7 +64,7 @@ class IndexPage extends Component {
 	render () {
 		const {data, classes} = this.props;
 		const {edges : posts} = data.allContentfulPost;
-		const fillColor = 'red';
+		const fillColor = '';
 
 		return (
 			<Grid container>

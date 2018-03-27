@@ -37,7 +37,10 @@ const postItemCardStyle = theme => ({
 	cardIcon : {
 		width : '40px',
 		height : '40px',
-		fill : '#fff',
+		fill : '#fff !important',
+		'&:hover' : {
+			background: 'transparent'
+		}
 	},
 	cardAvatar : {
 		margin : 0,

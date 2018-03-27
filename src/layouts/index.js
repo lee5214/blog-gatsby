@@ -64,7 +64,7 @@ class Layout extends Component {
 							>
 								<MenuIcon/>
 							</IconButton>
-							<Typography variant="display1" color="inherit" noWrap>
+							<Typography variant="headline" color="inherit" noWrap>
 								{this.props.location.pathname.replace('/','').replace(/-/g,' ')}
 							</Typography>
 						</Toolbar>

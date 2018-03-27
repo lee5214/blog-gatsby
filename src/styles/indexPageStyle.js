@@ -38,6 +38,10 @@ const indexPageStyle = (theme) => ({
 	tagAvatar : {
 		width : 30,
 		height : 30,
+		backgroundColor: '#e0e0e0',
+		'&:hover':{
+			backgroundColor: 'transparent',
+		}
 	},
 	titleLink : {
 		...defaultLink,

@@ -14,7 +14,6 @@ const muiTheme = createMuiTheme ({
 			main : '#ff0000',
 		},
 	},
-
 	overrides : {
 		MuiTabs : {
 			root : {
@@ -26,24 +25,18 @@ const muiTheme = createMuiTheme ({
 			},
 		},
 		MuiTab : {
-			// root : {
-			// 	'&:hover' : {
-			// 		color : 'primary',
-			// 	},
-			// },
-			textColorInherit: {
+			textColorInherit : {
 
-				color : 'white'
+				color : 'white',
 			},
 			labelIcon : {
 				paddingTop : 44,
 				'&:hover' : {
 					paddingTop : 0,
-					color : 'black'
+					color : 'black',
 				},
 				transition : '.25s ease-in-out .25s',
 			},
-
 		},
 		MuiListItem : {
 			button : {
@@ -51,6 +44,14 @@ const muiTheme = createMuiTheme ({
 				'&:hover' : {
 					color : 'primary',
 					opacity : 1,
+				},
+			},
+		},
+		MuiSvgIcon : {
+			root : {
+				'&:hover' : {
+					backgroundColor : 'black',
+					fill : 'white !important',
 				},
 			},
 		},
