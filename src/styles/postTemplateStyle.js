@@ -18,7 +18,6 @@ const postTemplateStyle = {
 			fontFamily : 'Montserrat',
 		},
 		'&>p>code' : {
-			fontSize : '1rem',
 			backgroundColor: primaryColor,
 			padding: '.05rem .25rem'
 

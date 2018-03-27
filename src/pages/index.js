@@ -47,11 +47,6 @@ const logosList = {
 		bgColor : 'black',
 	},
 };
-
-const style = {
-	width: 24,
-	height: 24,
-}
 /**
  * @param tag is a string got from markdown frontmatter
  * @returns component Avatar
@@ -59,8 +54,6 @@ const style = {
  * syntax <logoList[tag].icon is not allowed, so I abstracted this function.
  */
 class IndexPage extends Component {
-
-
 	generateTagAvatar = (tag, tagFillColor) => {
 		let tagComponent = logosList[tag];
 		return tagComponent ? <tagComponent.icon fill={tagFillColor}/> : null;
