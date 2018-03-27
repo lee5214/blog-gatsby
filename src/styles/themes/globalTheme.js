@@ -53,6 +53,7 @@ const muiTheme = createMuiTheme ({
 					backgroundColor : 'black',
 					fill : 'white !important',
 				},
+				transition: '.25s ease-in-out .25s'
 			},
 		},
 	},

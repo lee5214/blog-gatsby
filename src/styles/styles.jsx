@@ -34,7 +34,7 @@ const defaultFont = {
 	color : 'rgba(0, 0, 0, 0.6)',
 };
 
-const primaryColor = '#9c27b0';
+const primaryColor = '#72fffa';
 const warningColor = '#ff9800';
 const dangerColor = '#f44336';
 const successColor = '#4caf50';

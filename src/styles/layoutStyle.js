@@ -25,7 +25,7 @@ const layoutStyle = (theme) => ({
 		},
 	},
 	MainContent : {
-		marginTop:120,
+		marginTop : 120,
 		width : '100%',
 		overflow : 'scroll',
 		flexGrow : 1,
@@ -33,12 +33,14 @@ const layoutStyle = (theme) => ({
 		padding : theme.spacing.unit * 3,
 	},
 	tabBadge : {
-		'& > span' : {
+		height : 40,
+		width : 40,
+		'& > span' : { // for small tab content
 			top : 'auto',
-			bottom: 0,
-			right : -24,
+			bottom : 0,
+			right : -20,
 			backgroundColor : 'transparent',
-			borderRadius: 0,
+			borderRadius : 0,
 			color : 'white',
 		},
 	},

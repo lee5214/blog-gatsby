@@ -4,7 +4,8 @@ import ReduxIcon from './ReduxIcon.js';
 import GraphQLIcon from './GraphQLIcon.js';
 import MarkdownIcon from './MarkdownIcon.js';
 import BabelIcon from './BabelIcon.js';
-export { ReactIcon, GatsbyIcon, ReduxIcon, GraphQLIcon, MarkdownIcon, BabelIcon };
+import MaterialUIIcon from './MaterialUIIcon'
+export { ReactIcon, GatsbyIcon, ReduxIcon, GraphQLIcon, MarkdownIcon, BabelIcon, MaterialUIIcon };
 
 /*export const BabelIcon = (props) => {
  return (

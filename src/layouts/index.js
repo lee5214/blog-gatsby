@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import ContentHeader from '../components/ContentHeader';
-import { createMuiTheme, MuiThemeProvider, withStyles } from 'material-ui/styles';
+import { MuiThemeProvider, withStyles } from 'material-ui/styles';
 import 'prismjs/themes/prism-tomorrow.css';
 import Sidebar from '../components/Sidebar';
 
 import Link from 'gatsby-link';
-import { AppBar, Badge, IconButton, Tab, Tabs, Toolbar, Divider } from 'material-ui';
+import { AppBar, Badge, Divider, IconButton, Tab, Tabs, Toolbar } from 'material-ui';
 import Typography from 'material-ui/Typography';
 import MenuIcon from 'material-ui-icons/Menu';
 import logo from '../assets/logo_simple_black.png';
@@ -15,7 +15,8 @@ import layoutStyle from '../styles/layoutStyle';
 import Read from '../assets/icons/Read.svg';
 import ID from '../assets/icons/ID.svg';
 import Drone from '../assets/icons/Drone.svg';
-import globalTheme from '../styles/themes/globalTheme'
+import globalTheme from '../styles/themes/globalTheme';
+
 //import '../styles/index.css';
 
 class Layout extends Component {
@@ -65,10 +66,10 @@ class Layout extends Component {
 								<MenuIcon/>
 							</IconButton>
 							<Typography variant="headline" color="inherit" noWrap>
-								{this.props.location.pathname.replace('/','').replace(/-/g,' ')}
+								{ this.props.location.pathname.replace ('/', '').replace (/-/g, ' ') }
 							</Typography>
 						</Toolbar>
-						<Divider style={{background:'white'}}/>
+						<Divider style={ {background : 'white'} }/>
 						<Tabs centered
 						      value={ this.state.tabNum }
 						      onChange={ this.handleTabChange }
@@ -86,12 +87,19 @@ class Layout extends Component {
 								to={ '/' }
 							/>
 							<Tab label={ 'About' }
-							     icon={ <img className={ classes.tabIcon } src={ ID }/> }
+							     icon={
+								     <Badge className={ classes.tabBadge } color="secondary">
+									     <img className={ classes.tabIcon } src={ ID }/>
+								     </Badge>
+							     }
 							     component={ Link }
 							     to={ '/about' }
 							/>
 							<Tab label={ 'Find Me' }
-							     icon={ <img className={ classes.tabIcon } src={ Drone }/> }
+							     icon={
+								     <Badge className={ classes.tabBadge } color="secondary">
+									     <img className={ classes.tabIcon } src={ Drone }/>
+								     </Badge> }
 							     component={ Link }
 							     to={ '/contact' }
 							/>

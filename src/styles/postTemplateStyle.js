@@ -1,3 +1,4 @@
+import {primaryColor} from './styles'
 const postTemplateStyle = {
 	detailFront : {
 		border : '1px solid black',
@@ -12,10 +13,16 @@ const postTemplateStyle = {
 	markdownContentWrapper : {
 		fontFamily : 'roboto',
 		textAlign : 'justify',
-		'& > h1,h2,h3,h4' : {
+		'&>h1,h2,h3,h4' : {
 			marginTop : '2.5rem',
-			fontFamily : 'audiowide',
+			fontFamily : 'Montserrat',
 		},
+		'&>p>code' : {
+			fontSize : '1rem',
+			backgroundColor: primaryColor,
+			padding: '.05rem .25rem'
+
+		}
 	},
 	tagContainer : {
 		display : 'flex',
