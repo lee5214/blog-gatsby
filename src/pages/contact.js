@@ -5,12 +5,11 @@ const Contact = () => {
 	return (
 		<div style={{display:'flex',justifyContent:'center'}}>
 			<form
-				name="contact-form"
+				name="contact"
 				method="post"
 				data-netlify="true"
 				data-netlify-honeypot="bot-field"
 			>
-				<div>
 					<TextField
 						id="with-placeholder"
 						name={'name'}
@@ -18,9 +17,11 @@ const Contact = () => {
 						placeholder="John Snow"
 						type="text"
 						required
+						inputProps={{
+
+						}}
 					/>
-				</div>
-				<div>
+				{/*<div>
 					<TextField
 						id="with-placeholder"
 						name={'email'}
@@ -40,11 +41,27 @@ const Contact = () => {
 						margin="normal"
 						required
 					/>
-				</div>
+				</div>*/}
 
 				{ /*<input name="email" placeholder="king@google.com" type="email"/>*/ }
 
 				{/*<textarea name="message"/>*/}
+				<button>Send</button>
+			</form>
+
+			<form
+				name="contact-form"
+				method="post"
+				data-netlify="true"
+				data-netlify-honeypot="bot-field"
+			>
+				<div>
+				<input name="name" placeholder="Your Name" type="text" />
+				</div>
+				<span>
+				<input name="email" placeholder="name@name.com" type="email" />
+				</span>
+				<textarea name="message" />
 				<button>Send</button>
 			</form>
 		</div>
