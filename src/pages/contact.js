@@ -1,54 +1,86 @@
 import React from 'react';
 import { TextField } from 'material-ui';
 
-const Contact = () => {
-	return (
-		<div style={ {display : 'flex', justifyContent : 'center'} }>
-			<form
-				name="contact"
-				method="post"
-				data-netlify="true"
-				data-netlify-honeypot="bot-field"
-			>
-				<TextField
-					id="with-placeholder"
-					name={ 'name' }
-					label='Name'
-					placeholder="John Snow"
-					type="text"
-					required
-					inputProps={ {} }
-				/>
-				{/*<div>
-				 <TextField
-				 id="with-placeholder"
-				 name={'email'}
-				 label='Email'
-				 placeholder="xxxx@xxxx.com"
-				 type="text"
-				 required
-				 />
-				 </div>
-				 <div>
-				 <TextField
-				 id="multiline-static"
-				 name={'message'}
-				 label="Multiline"
-				 multiline
-				 rows="4"
-				 margin="normal"
-				 required
-				 />
-				 </div>*/}
+function encode (data) {
+	return Object.keys (data)
+	             .map ((key) => encodeURIComponent (key) + '=' + encodeURIComponent (data[key]))
+	             .join ('&');
+}
 
-				{ /*<input name="email" placeholder="king@google.com" type="email"/>*/ }
+export default class Contact extends React.Component {
+	constructor (props) {
+		super (props);
+		this.state = {};
+	}
 
-				{ /*<textarea name="message"/>*/ }
-				<button>Send</button>
-			</form>
+	handleChange = (e) => {
+		this.setState ({[e.target.name] : e.target.value});
+	};
 
+	handleSubmit = e => {
+		fetch ('/', {
+			method : 'POST',
+			headers : {'Content-Type' : 'application/x-www-form-urlencoded'},
+			body : encode ({'form-name' : 'contact', ...this.state}),
+		})
+			.then (() => alert ('Success!'))
+			.catch (error => alert (error));
 
-		</div>
-	);
-};
-export default Contact;
+		e.preventDefault ();
+	};
+
+	render () {
+		return (
+			<div style={ {display : 'flex',flexDirection:'column', justifyContent : 'center', alignItems:'center'} }>
+				<p>Send to my email: cong-li@cong-li.com</p>
+				<p>Or send a message here</p>
+				<form
+					name="contact"
+					method="post"
+					action="/thanks/"
+					data-netlify="true"
+					data-netlify-honeypot="bot-field"
+					onSubmit={ this.handleSubmit }
+				>
+					<p hidden>
+						<label>
+							Don’t fill this out: <input name="bot-field"/>
+						</label>
+					</p>
+
+					<TextField
+						id="with-placeholder"
+						name={ 'name' }
+						label='Name'
+						placeholder="John Snow"
+						type="text"
+						required
+						onChange={ this.handleChange }
+					/>
+					<br/>
+					<TextField
+						id="with-placeholder"
+						name={'email'}
+						label='Email'
+						placeholder="xxxx@xxxx.com"
+						type="text"
+						required
+					/>
+					<br/>
+					<TextField
+						id="multiline-static"
+						name={'message'}
+						label="Multiline"
+						multiline
+						rows="4"
+						margin="normal"
+						required
+					/>
+					<p>
+						<button type="submit">Send</button>
+					</p>
+				</form>
+			</div>
+		);
+	}
+}
