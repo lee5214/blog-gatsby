@@ -1,8 +1,9 @@
 import React from 'react';
+import { TextField } from 'material-ui';
 
 function encode (data) {
 	return Object.keys (data)
-	             .map (key => encodeURIComponent (key) + '=' + encodeURIComponent (data[key]))
+	             .map ((key) => encodeURIComponent (key) + '=' + encodeURIComponent (data[key]))
 	             .join ('&');
 }
 
@@ -40,17 +41,21 @@ export default class Contact extends React.Component {
 					data-netlify-honeypot="bot-field"
 					onSubmit={ this.handleSubmit }
 				>
+					<TextField
+						id="with-placeholder"
+						name={ 'name' }
+						label='Name'
+						placeholder="John Snow"
+						type="text"
+						required
+						onChange={ this.handleChange }
+					/>
 					<p hidden>
 						<label>
 							Don’t fill this out: <input name="bot-field"/>
 						</label>
 					</p>
-					<p>
-						<label>
-							Your name:<br/>
-							<input type="text" name="name" onChange={ this.handleChange }/>
-						</label>
-					</p>
+
 					<p>
 						<label>
 							Your email:<br/>
