@@ -5,7 +5,7 @@ const muiTheme = createMuiTheme ({
 		iconColor : '#666'         // desired ripple color
 	},
 	palette : {
-		type : 'dark',
+
 		primary : {
 			main : '#000000',
 			dark : '#000000',
@@ -40,7 +40,7 @@ const muiTheme = createMuiTheme ({
 		MuiListItem : {
 			button : {
 				'&:hover' : {
-					color : 'white !important',
+					color : 'white !important', // ripple effect
 					opacity : 1,
 				},
 			},

@@ -17,6 +17,7 @@ const sidebarContentStyle = theme => ({
 		padding : 0,
 	},
 	buttonTextPrimary : {
+		color: 'white',
 		fontWeight: 400,
 		textAlign : 'center',
 		fontFamily : 'Montserrat',

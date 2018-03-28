@@ -1,44 +1,53 @@
 import React from 'react';
+import { TextField } from 'material-ui';
+
 const Contact = () => {
-	return(
-		<div>
-			<div>
-				Email: cong-li@cong-li.com
-				Github Icon
-				Linkedin Icon
-			</div>
-			{/*<form name="contact" method="POST" data-netlify='true'>*/}
-				{/*<p style={{visibility:'hidden'}}>
-					<label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-				</p>
-				<p>
-					<label>Your Name: <input type="text" name="name" /></label>
-				</p>
-				<p>
-					<label>Your Email: <input type="email" name="email" /></label>
-				</p>
-				<p>
-					<label>Message: <textarea name="message"></textarea></label>
-				</p>*/}
+	return (
+		<div style={{display:'flex',justifyContent:'center'}}>
+			<form
+				name="contact-form"
+				method="post"
+				data-netlify="true"
+				data-netlify-honeypot="bot-field"
+			>
+				<div>
+					<TextField
+						id="with-placeholder"
+						name={'name'}
+						label='Name'
+						placeholder="John Snow"
+						type="text"
+						required
+					/>
+				</div>
+				<div>
+					<TextField
+						id="with-placeholder"
+						name={'email'}
+						label='Email'
+						placeholder="xxxx@xxxx.com"
+						type="text"
+						required
+					/>
+				</div>
+				<div>
+					<TextField
+						id="multiline-static"
+						name={'message'}
+						label="Multiline"
+						multiline
+						rows="4"
+						margin="normal"
+						required
+					/>
+				</div>
 
+				{ /*<input name="email" placeholder="king@google.com" type="email"/>*/ }
 
-			<div>
-				<h1>Hi people</h1>
-				<p>Welcome to your new Gatsby site.</p>
-				<p>Now go build something great.</p>
-				<form
-					name="contact-form"
-					method="post"
-					data-netlify="true"
-					data-netlify-honeypot="bot-field"
-				>
-					<input name="name" placeholder="Your Name" type="text" />
-					<input name="email" placeholder="name@name.com" type="email" />
-					<textarea name="message" />
-					<button>Send</button>
-				</form>
-			</div>
+				{/*<textarea name="message"/>*/}
+				<button>Send</button>
+			</form>
 		</div>
-	)
-}
-export default Contact
+	);
+};
+export default Contact;

@@ -8,7 +8,7 @@ const layoutStyle = (theme) => ({
 		display : 'flex',
 		overflow : 'hidden',
 		margin : '1rem',
-		borderRadius : '1rem',
+		borderRadius : 12,
 	},
 	appBar : {
 		//background : '#343434',
