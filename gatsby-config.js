@@ -1,9 +1,8 @@
 module.exports = {
 	// site-wide header meta
 	siteMetadata : {
-		//title : 'CongLi\'s Blog',
+		title : 'CongLi\'s Blog',
 	},
-
 	plugins : [
 		`gatsby-plugin-react-helmet`,
 		{
@@ -54,15 +53,15 @@ module.exports = {
 		//  path : `${__dirname}/src/content/posts`,
 		//  },
 		//  },
-		// {
-		// 	resolve : `gatsby-plugin-nprogress`,
-		// 	options : {
-		// 		// Setting a color is optional.
-		// 		color : `tomato`,
-		// 		// Disable the loading spinner.
-		// 		showSpinner : false,
-		// 	},
-		// },
+		{
+			resolve : `gatsby-plugin-nprogress`,
+			options : {
+				// Setting a color is optional.
+				color : `tomato`,
+				// Disable the loading spinner.
+				showSpinner : true,
+			},
+		},
 		`gatsby-plugin-netlify`,
 
 	],

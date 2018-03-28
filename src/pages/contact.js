@@ -7,7 +7,7 @@ const Contact = () => {
 				Github Icon
 				Linkedin Icon
 			</div>
-			<form name="contact" method="POST" data-netlify='true' data-netlify-honeypot='bot-field'>
+			{/*<form name="contact" method="POST" data-netlify='true'>*/}
 				{/*<p style={{visibility:'hidden'}}>
 					<label>Don’t fill this out if you're human: <input name="bot-field" /></label>
 				</p>
@@ -22,11 +22,22 @@ const Contact = () => {
 				</p>*/}
 
 
-				<input name="name" type="text"/>
-				<p>
+			<div>
+				<h1>Hi people</h1>
+				<p>Welcome to your new Gatsby site.</p>
+				<p>Now go build something great.</p>
+				<form
+					name="contact-form"
+					method="post"
+					data-netlify="true"
+					data-netlify-honeypot="bot-field"
+				>
+					<input name="name" placeholder="Your Name" type="text" />
+					<input name="email" placeholder="name@name.com" type="email" />
+					<textarea name="message" />
 					<button>Send</button>
-				</p>
-			</form>
+				</form>
+			</div>
 		</div>
 	)
 }
