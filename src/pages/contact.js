@@ -65,6 +65,7 @@ export default class Contact extends React.Component {
 						placeholder="xxxx@xxxx.com"
 						type="text"
 						required
+						onChange={ this.handleChange }
 					/>
 					<br/>
 					<TextField
@@ -75,6 +76,7 @@ export default class Contact extends React.Component {
 						rows="4"
 						margin="normal"
 						required
+						onChange={ this.handleChange }
 					/>
 					<p>
 						<button type="submit">Send</button>
