@@ -1,12 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const MessageWall = () => {
-	return (
-		<div >contact
+  return <div>contact</div>
+}
 
-		</div>
-
-	);
-};
-
-export default MessageWall;
+export default MessageWall

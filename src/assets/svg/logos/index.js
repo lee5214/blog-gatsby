@@ -1,11 +1,19 @@
-import ReactIcon from './ReactIcon.js';
-import GatsbyIcon from './GatsbyIcon.js';
-import ReduxIcon from './ReduxIcon.js';
-import GraphQLIcon from './GraphQLIcon.js';
-import MarkdownIcon from './MarkdownIcon.js';
-import BabelIcon from './BabelIcon.js';
+import ReactIcon from './ReactIcon.js'
+import GatsbyIcon from './GatsbyIcon.js'
+import ReduxIcon from './ReduxIcon.js'
+import GraphQLIcon from './GraphQLIcon.js'
+import MarkdownIcon from './MarkdownIcon.js'
+import BabelIcon from './BabelIcon.js'
 import MaterialUIIcon from './MaterialUIIcon'
-export { ReactIcon, GatsbyIcon, ReduxIcon, GraphQLIcon, MarkdownIcon, BabelIcon, MaterialUIIcon };
+export {
+  ReactIcon,
+  GatsbyIcon,
+  ReduxIcon,
+  GraphQLIcon,
+  MarkdownIcon,
+  BabelIcon,
+  MaterialUIIcon,
+}
 
 /*export const BabelIcon = (props) => {
  return (
@@ -63,5 +71,3 @@ export { ReactIcon, GatsbyIcon, ReduxIcon, GraphQLIcon, MarkdownIcon, BabelIcon,
  </SvgIcon>
  );
  };*/
-
-

@@ -38,7 +38,7 @@
    *  "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出),
    *  "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
    */
-  "rules": {
+ /* "rules": {
     "react/prop-types": 1,
     "react/no-unescaped-entities": 1,
     "react/no-string-refs": 1,
@@ -113,12 +113,12 @@
     // 禁止出现令人困惑的多行表达式
     "no-unexpected-multiline": 1,
     // 禁止在return、throw、continue 和 break语句之后出现不可达代码
-    /*
+    *//*
         function foo() {
         return true;
         console.log("done");
         }//错误
-    */
+    *//*
     "no-unreachable": 1,
     // 要求使用 isNaN() 检查 NaN
     "use-isnan": 1,
@@ -306,7 +306,7 @@
     "no-shadow": 0,
     // 禁止覆盖受限制的标识符
     "no-shadow-restricted-names": 1,
-    // 禁用未声明的变量，除非它们在 /*global */ 注释中被提到
+    // 禁用未声明的变量，除非它们在 *//*global *//* 注释中被提到
     "no-undef": 1,
     // 禁止将变量初始化为 undefined
     "no-undef-init": 1,
@@ -583,7 +583,7 @@
         "nonwords": false
       }
     ],
-    // 强制在注释中 // 或 /* 使用一致的空格
+    // 强制在注释中 // 或 *//* 使用一致的空格
     "spaced-comment": [
       1,
       "always",
@@ -670,5 +670,5 @@
     "template-curly-spacing": 1,
     // 强制在 yield* 表达式中 * 周围使用空格
     "yield-star-spacing": 1
-  }
+  }*/
 }
