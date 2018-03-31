@@ -1,4 +1,4 @@
-import { primaryColor } from './styles'
+// import { primaryColor } from './styles'
 const postTemplateStyle = {
   detailFront: {
     border: '1px solid black',
@@ -18,7 +18,8 @@ const postTemplateStyle = {
       fontFamily: 'Montserrat',
     },
     '&>p>code': {
-      backgroundColor: primaryColor,
+	    // color: 'black',
+	    // backgroundColor: primaryColor,
       padding: '.05rem .25rem',
     },
   },
@@ -32,6 +33,6 @@ const postTemplateStyle = {
     padding: '0  .5rem',
     marginRight: '1rem',
   },
-}
+};
 
 export default postTemplateStyle

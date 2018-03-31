@@ -3,7 +3,14 @@
   "description": "blog of cool stuff",
   "version": "1.0.0",
   "author": "Cong Li <cong-li@cong-li.com>",
-  "keywords": ["react", "redux", "frontend", "fullstack", "nodejs", "gatsby"],
+  "keywords": [
+    "react",
+    "redux",
+    "frontend",
+    "fullstack",
+    "nodejs",
+    "gatsby"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
