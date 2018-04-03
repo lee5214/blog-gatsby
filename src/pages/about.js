@@ -4,8 +4,8 @@ import MessageWall from '../components/Wall/MessageWall'
 const About = () => {
   return (
     <div>
-      <MessageWall />
+      { /*<MessageWall />*/ }
     </div>
   )
-}
+};
 export default About

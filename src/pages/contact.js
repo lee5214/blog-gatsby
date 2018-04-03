@@ -9,13 +9,13 @@ function encode(data) {
 
 export default class Contact extends React.Component {
   constructor(props) {
-    super(props)
+    super (props);
     this.state = {}
   }
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value })
-  }
+  };
 
   handleSubmit = e => {
     fetch('/', {
@@ -24,10 +24,10 @@ export default class Contact extends React.Component {
       body: encode({ 'form-name': 'contact', ...this.state }),
     })
       .then(() => alert('Success!'))
-      .catch(error => alert(error))
+      .catch (error => alert (error));
 
     e.preventDefault()
-  }
+  };
 
   render() {
     return (
@@ -39,7 +39,7 @@ export default class Contact extends React.Component {
           alignItems: 'center',
         }}
       >
-        <p>Send to my email: cong-li@cong-li.com</p>
+        <p>Email: cong-li@cong-li.com</p>
         <p>Or send a message here</p>
         <form
           name="contact"
