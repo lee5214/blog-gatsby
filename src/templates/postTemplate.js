@@ -1,10 +1,10 @@
-import React from 'react'
-import { withStyles } from 'material-ui/styles'
-import postTemplateStyle from '../styles/postTemplateStyle'
-import moment from 'moment'
-
+import React from 'react';
+import { withStyles } from 'material-ui/styles';
+import postTemplateStyle from '../styles/postTemplateStyle';
+import moment from 'moment';
+import Disqus from '../components/Disqus/Disqus';
 const PostTemplate = ({ data, classes }) => {
-  const { contentfulPost: post } = data
+  const { contentfulPost: post } = data;
   return (
     <div>
       <div className={classes.detailFront}>
@@ -22,10 +22,11 @@ const PostTemplate = ({ data, classes }) => {
         className={classes.markdownContentWrapper}
         dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }}
       />
+      <Disqus style={{height:400,backgroundColor:'red'}} title={post.title} slug={post.slug} postID={post.id} />
     </div>
-  )
-}
-export default withStyles(postTemplateStyle)(PostTemplate)
+  );
+};
+export default withStyles(postTemplateStyle)(PostTemplate);
 
 export const postQuery = graphql`
   query BlogPostByPath($slug: String!) {
@@ -42,4 +43,4 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;
