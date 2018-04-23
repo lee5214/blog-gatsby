@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import TimeLine from '../components/Index/TimeLine'
+import EqualColumn from '../components/Index/EqualColumn'
 import {
   BabelIcon,
   GatsbyIcon,
@@ -40,7 +40,7 @@ const logosList = {
     icon: MaterialUIIcon,
     bgColor: 'black',
   },
-}
+};
 
 /**
  * @param tag is a string got from markdown frontmatter
@@ -50,16 +50,16 @@ const logosList = {
  */
 class IndexPage extends Component {
   generateTagAvatar = (tag, tagFillColor) => {
-    let tagComponent = logosList[tag]
+    let tagComponent = logosList[tag];
     return tagComponent ? <tagComponent.icon fill={tagFillColor} /> : null
-  }
+  };
 
   render() {
-    const { data, classes } = this.props
-    const { edges: posts } = data.allContentfulPost
-    const tagFillColor = ''
+    const { data, classes } = this.props;
+    const { edges: posts } = data.allContentfulPost;
+    const tagFillColor = '';
 
-    return <TimeLine posts={posts} />
+    return <EqualColumn posts={posts} />
   }
 }
 
@@ -82,11 +82,11 @@ export const listQuery = graphql`
       }
     }
   }
-`
+`;
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
   //classes : PropTypes.object.isRequired,
-}
+};
 
 export default IndexPage
