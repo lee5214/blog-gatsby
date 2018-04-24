@@ -32,8 +32,8 @@ class SidebarContent extends Component {
       <ListItem
         button
         component={Link}
-        //IMPORTANT use backtick syntax to avoid duplicated path error like ***/post1/post1
-        to={`/${post.node.slug}/`}
+        //IMPORTANT use backtick syntax and add '/' to avoid duplicated path error like ***/post1/post1
+        to={`/${post.node.slug}`}
         key={`sidebarlink-${post.node.id}`}
         className={` ${classes.itemLink} ${
           this.activeRoute(post.node.slug) ? classes[themeColor] : ''

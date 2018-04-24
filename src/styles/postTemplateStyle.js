@@ -1,38 +1,43 @@
 // import { primaryColor } from './styles'
-const postTemplateStyle = {
+const postTemplateStyle = theme => ({
+  container: {
+    backgroundColor: 'black',
+    color: 'white',
+    padding: '1rem'
+  },
   detailFront: {
-    border: '1px solid black',
+    border: '1px solid white',
     padding: '1rem',
     marginBottom: '1rem',
     fontFamily: 'Montserrat',
-    fontWeight: 400,
+    fontWeight: 400
   },
   title: {
-    fontFamily: 'audiowide',
+    fontFamily: 'audiowide'
   },
-  markdownContentWrapper: {
+  postContentWrapper: {
     fontFamily: 'roboto',
     textAlign: 'justify',
     '&>h1,h2,h3,h4': {
       marginTop: '2.5rem',
-      fontFamily: 'Montserrat',
+      fontFamily: 'Montserrat'
     },
     '&>p>code': {
-	    // color: 'black',
-	    // backgroundColor: primaryColor,
-      padding: '.05rem .25rem',
-    },
+      // color: 'black',
+      // backgroundColor: primaryColor,
+      padding: '.05rem .25rem'
+    }
   },
   tagContainer: {
     display: 'flex',
     justifyContent: 'start',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
   },
   tag: {
     background: '#72fffa',
     padding: '0  .5rem',
-    marginRight: '1rem',
-  },
-};
+    marginRight: '1rem'
+  }
+});
 
-export default postTemplateStyle
+export default postTemplateStyle;

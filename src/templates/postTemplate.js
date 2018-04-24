@@ -6,7 +6,7 @@ import Disqus from '../components/Disqus/Disqus';
 const PostTemplate = ({ data, classes }) => {
   const { contentfulPost: post } = data;
   return (
-    <div>
+    <div className={classes.container}>
       <div className={classes.detailFront}>
         <h1 className={classes.title}>{post.title}</h1>
         <p>{moment(post.date).format('MMMM DD YYYY')}</p>
@@ -19,10 +19,15 @@ const PostTemplate = ({ data, classes }) => {
         </div>
       </div>
       <div
-        className={classes.markdownContentWrapper}
+        className={classes.postContentWrapper}
         dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }}
       />
-      <Disqus style={{height:400,backgroundColor:'red'}} title={post.title} slug={post.slug} postID={post.id} />
+      <Disqus
+        style={{ height: 400, backgroundColor: 'red' }}
+        title={post.title}
+        slug={post.slug}
+        postID={post.id}
+      />
     </div>
   );
 };
