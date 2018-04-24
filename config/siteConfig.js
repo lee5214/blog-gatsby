@@ -1,0 +1,1 @@
+module.exports = {  disqusShortName: 'conglis-blog',  siteURL: 'https://blog.cong-li.com'};
