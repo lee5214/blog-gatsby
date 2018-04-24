@@ -28,8 +28,8 @@ const layoutStyle = theme => ({
     width: '100%',
     overflow: 'scroll',
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3
+    backgroundColor: 'black' //theme.palette.primaryColor
+    // padding: theme.spacing.unit * 3
   },
   tabBadge: {
     height: 40,
@@ -55,8 +55,7 @@ const layoutStyle = theme => ({
   postBlock: {
     margin: '0 auto',
     maxWidth: '960px',
-    padding: '0 .0875rem 1.45rem',
-    paddingTop: 0
+    padding: '1rem 0'
   }
 });
 

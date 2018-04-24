@@ -3,7 +3,7 @@ const postTemplateStyle = theme => ({
   container: {
     backgroundColor: 'black',
     color: 'white',
-    padding: '1rem'
+    padding: '1rem 1rem 0',
   },
   detailFront: {
     border: '1px solid white',
