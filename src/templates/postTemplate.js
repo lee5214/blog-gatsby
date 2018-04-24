@@ -22,12 +22,14 @@ const PostTemplate = ({ data, classes }) => {
         className={classes.postContentWrapper}
         dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }}
       />
-      <Disqus
-        style={{ height: 400, backgroundColor: 'red' }}
-        title={post.title}
-        slug={post.slug}
-        postID={post.id}
-      />
+      <div>
+        <Disqus
+          style={{ height: 400, backgroundColor: 'red' }}
+          title={post.title}
+          slug={post.slug}
+          postID={post.id}
+        />
+      </div>
     </div>
   );
 };
