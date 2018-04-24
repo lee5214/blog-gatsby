@@ -6,7 +6,6 @@ const layoutStyle = theme => ({
     zIndex: 1,
     position: 'relative',
     display: 'flex',
-    overflow: 'hidden',
     margin: '1rem',
     borderRadius: 12
   },

@@ -24,7 +24,6 @@ const PostTemplate = ({ data, classes }) => {
       />
       <div>
         <Disqus
-          style={{ height: 400, backgroundColor: 'red' }}
           title={post.title}
           slug={post.slug}
           postID={post.id}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import EqualColumn from '../components/Index/EqualColumn'
+import TimeLine from '../components/Index/TimeLine'
 import {
   BabelIcon,
   GatsbyIcon,
@@ -59,7 +59,7 @@ class IndexPage extends Component {
     const { edges: posts } = data.allContentfulPost;
     const tagFillColor = '';
 
-    return <EqualColumn posts={posts} />
+    return <TimeLine posts={posts} />
   }
 }
 

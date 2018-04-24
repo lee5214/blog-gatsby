@@ -1,25 +1,26 @@
-import React from 'react'
-import moment from 'moment'
+import React from 'react';
+import moment from 'moment';
 import {
   Card,
   CardActions,
   CardContent,
   CardHeader,
   Typography,
-  withStyles,
-} from 'material-ui'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import postItemCardStyle from '../../styles/components/postItemCardStyle'
+  withStyles
+} from 'material-ui';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import postItemCardStyle from '../../styles/components/postItemCardStyle';
 
 function PostItemCard({ ...props }) {
-  const { classes, postDate, title, seriesNumber, iconColor, postLink } = props
+  const { classes, postDate, title, seriesNumber, iconColor, postLink } = props;
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} style={{ overflow: 'visible' }}>
       <CardHeader
         classes={{
           root: classes.cardHeader + ' ' + classes[iconColor + 'CardHeader'],
           avatar: classes.cardAvatar,
+          overflow: 'visible'
         }}
         avatar={<props.icon className={classes.cardIcon} />}
       />
@@ -46,12 +47,12 @@ function PostItemCard({ ...props }) {
         <div>{props.children || null}</div>
       </CardActions>
     </Card>
-  )
+  );
 }
 
 PostItemCard.defaultProps = {
-  iconColor: 'purple',
-}
+  iconColor: 'purple'
+};
 
 PostItemCard.propTypes = {
   children: PropTypes.object,
@@ -61,7 +62,7 @@ PostItemCard.propTypes = {
   postDate: PropTypes.node,
   title: PropTypes.node,
   seriesNumber: PropTypes.node,
-  postLink: PropTypes.string.isRequired,
-}
+  postLink: PropTypes.string.isRequired
+};
 
-export default withStyles(postItemCardStyle)(PostItemCard)
+export default withStyles(postItemCardStyle)(PostItemCard);

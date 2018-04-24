@@ -1,5 +1,5 @@
 // import { primaryColor } from './styles'
-const postTemplateStyle = theme => ({
+const postTemplateStyle = {
   container: {
     backgroundColor: 'black',
     color: 'white',
@@ -38,6 +38,6 @@ const postTemplateStyle = theme => ({
     padding: '0  .5rem',
     marginRight: '1rem'
   }
-});
+};
 
 export default postTemplateStyle;
