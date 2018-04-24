@@ -1,40 +1,46 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import moment from 'moment'
-import { withStyles } from 'material-ui/styles'
-import List, { ListItem, ListItemText } from 'material-ui/List'
-import Divider from 'material-ui/Divider'
-import Typography from 'material-ui/Typography'
-import sidebarStyle from '../../styles/components/sidebarContentStyle'
-import logo from '../../assets/logo_simple_white.png'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import moment from 'moment';
+import { withStyles } from 'material-ui/styles';
+import List, { ListItem, ListItemText } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import Typography from 'material-ui/Typography';
+import sidebarStyle from '../../styles/components/sidebarContentStyle';
+import logo from '../../assets/logo_simple_white.png';
 
 class SidebarContent extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      sidebarOpen: true,
-    }
+      sidebarOpen: true
+    };
+  }
+  componentDidMount() {
+    this.props.posts.map(post => {
+      this.props.location.pathname.indexOf(post.node.slug) > -1
+        ? console.log('true')
+        : console.log('false');
+    });
   }
 
   /**
-   *
    * @param path
    * location is an object passed from Gatsby's Root React Router
    * in production, window.location may not work (due to the build environment), so replace it with this object
    * @returns {boolean}
    */
   activeRoute = path => {
-    return this.props.location.pathname.indexOf(path) > -1 ? true : false
-  }
+    return this.props.location.pathname.indexOf(path) > -1 ? true : false;
+  };
 
   createPostButton = post => {
-    const { classes, themeColor } = this.props
+    const { classes, themeColor } = this.props;
     return (
       <ListItem
         button
         component={Link}
-        to={post.node.slug}
+        to={`/${post.node.slug}`}
         key={`sidebarlink-${post.node.id}`}
         className={` ${classes.itemLink} ${
           this.activeRoute(post.node.slug) ? classes[themeColor] : ''
@@ -55,12 +61,11 @@ class SidebarContent extends Component {
           }
         />
       </ListItem>
-    )
-  }
+    );
+  };
 
   render() {
-    const content = ''
-    const { classes, posts } = this.props
+    const { classes, posts } = this.props;
     return (
       <div>
         <div className={classes.logo}>
@@ -68,7 +73,6 @@ class SidebarContent extends Component {
             <div className={classes.logoImageContainer}>
               <img src={logo} alt="logo" className={classes.logoImage} />
             </div>
-            {content}
           </Link>
         </div>
         <Divider className={classes.headerDivider} />
@@ -79,12 +83,12 @@ class SidebarContent extends Component {
         </div>
         <Divider className={classes.headerDivider} />
       </div>
-    )
+    );
   }
 }
 
 SidebarContent.propTypes = {
   posts: PropTypes.array,
-  location: PropTypes.object.isRequired,
-}
-export default withStyles(sidebarStyle)(SidebarContent)
+  location: PropTypes.object.isRequired
+};
+export default withStyles(sidebarStyle)(SidebarContent);
