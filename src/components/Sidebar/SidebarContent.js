@@ -16,14 +16,6 @@ class SidebarContent extends Component {
       sidebarOpen: true
     };
   }
-  componentDidMount() {
-    this.props.posts.map(post => {
-      this.props.location.pathname.indexOf(post.node.slug) > -1
-        ? console.log('true')
-        : console.log('false');
-    });
-  }
-
   /**
    * @param path
    * location is an object passed from Gatsby's Root React Router
@@ -40,7 +32,8 @@ class SidebarContent extends Component {
       <ListItem
         button
         component={Link}
-        to={`/${post.node.slug}`}
+        //IMPORTANT use backtick syntax to avoid duplicated path error like ***/post1/post1
+        to={`/${post.node.slug}/`}
         key={`sidebarlink-${post.node.id}`}
         className={` ${classes.itemLink} ${
           this.activeRoute(post.node.slug) ? classes[themeColor] : ''
