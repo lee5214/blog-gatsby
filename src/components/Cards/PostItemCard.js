@@ -15,12 +15,11 @@ import postItemCardStyle from '../../styles/components/postItemCardStyle';
 function PostItemCard({ ...props }) {
   const { classes, postDate, title, seriesNumber, iconColor, postLink } = props;
   return (
-    <Card className={classes.card} style={{ overflow: 'visible' }}>
+    <Card className={`${classes.card} ${classes.cardContainer}`} >
       <CardHeader
         classes={{
           root: classes.cardHeader + ' ' + classes[iconColor + 'CardHeader'],
           avatar: classes.cardAvatar,
-          overflow: 'visible'
         }}
         avatar={<props.icon className={classes.cardIcon} />}
       />

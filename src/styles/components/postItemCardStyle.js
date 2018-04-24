@@ -15,12 +15,14 @@ import {
 } from '../styles';
 
 const postItemCardStyle = theme => ({
+  cardContainer: {
+    overflow: 'visible'
+  },
   card,
   cardHeader: {
     ...cardHeader,
     float: 'left',
-    textAlign: 'center',
-    overflow: 'visible'
+    textAlign: 'center'
   },
   orangeCardHeader,
   greenCardHeader,
