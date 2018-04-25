@@ -5,7 +5,7 @@ const muiTheme = createMuiTheme({
     iconColor: '#666' // desired ripple color
   },
   palette: {
-    type:'dark',
+    type:'light',
     background: {
       default: '#000000'
     },

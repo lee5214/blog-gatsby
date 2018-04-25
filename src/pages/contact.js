@@ -25,7 +25,6 @@ export default class Contact extends React.Component {
     })
       .then(() => alert('Success!'))
       .catch (error => alert (error));
-
     e.preventDefault()
   };
 
