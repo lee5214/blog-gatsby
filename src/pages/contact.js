@@ -1,41 +1,42 @@
-import React from 'react'
-import { TextField } from 'material-ui'
+import React from 'react';
+import { TextField } from 'material-ui';
 
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
+    .join('&');
 }
 
 export default class Contact extends React.Component {
   constructor(props) {
-    super (props);
-    this.state = {}
+    super(props);
+    this.state = {};
   }
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value })
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   handleSubmit = e => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...this.state }),
+      body: encode({ 'form-name': 'contact', ...this.state })
     })
       .then(() => alert('Success!'))
-      .catch (error => alert (error));
-    e.preventDefault()
+      .catch(error => alert(error));
+    e.preventDefault();
   };
 
   render() {
     return (
       <div
         style={{
+          backgroundColor:'white',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          alignItems: 'center',
+          alignItems: 'center'
         }}
       >
         <p>Email: cong-li@cong-li.com</p>
@@ -89,6 +90,6 @@ export default class Contact extends React.Component {
           </p>
         </form>
       </div>
-    )
+    );
   }
 }
