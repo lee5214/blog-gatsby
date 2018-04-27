@@ -51,6 +51,7 @@ const muiTheme = createMuiTheme({
 
     MuiSvgIcon: {
       root: {
+        padding: 2,
         '&:hover': {
           backgroundColor: 'black',
           fill: 'white !important'

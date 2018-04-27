@@ -44,7 +44,9 @@ class SidebarContent extends Component {
           primary={
             <Typography type={'body2'} className={classes.buttonTextPrimary}>
               {post.node.title}
-              <small>{`  #${post.node.seriesNumber}`}</small>
+              {post.node.seriesNumber ? (
+                <small> #{post.node.seriesNumber}</small>
+              ) : null}
             </Typography>
           }
           secondary={

@@ -8,6 +8,7 @@ const indexEqualColumnStyle = theme => ({
     marginTop: 5,
   },
   tagAvatar: {
+    margin: '0 5px',
     width: 30,
     height: 30,
     backgroundColor: '#e0e0e0',

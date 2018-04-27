@@ -1,12 +1,12 @@
-import React from 'react'
-import SvgIcon from 'material-ui/SvgIcon'
+import React from 'react';
+import SvgIcon from 'material-ui/SvgIcon';
 
 const BabelIcon = props => {
   return (
     <SvgIcon
       {...props}
       viewBox={'0 0 256 228'}
-      style={{ fill: `${props.fill}||'#00D8FF'` }}
+      style={{ fill: `${props.fill}` || '#00D8FF' }}
     >
       <g>
         <path
@@ -14,7 +14,7 @@ const BabelIcon = props => {
         />
       </g>
     </SvgIcon>
-  )
-}
+  );
+};
 
-export default BabelIcon
+export default BabelIcon;

@@ -1,9 +1,9 @@
-import React  from 'react'
-import PropTypes from 'prop-types'
-import { withStyles } from 'material-ui/styles'
-import Grid from 'material-ui/Grid'
-import ItemGrid from '../../components/Grid/ItemGrid'
-import PostItemCard from '../../components/Cards/PostItemCard'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import Grid from 'material-ui/Grid';
+import ItemGrid from '../../components/Grid/ItemGrid';
+import PostItemCard from '../../components/Cards/PostItemCard';
 import {
   BabelIcon,
   GatsbyIcon,
@@ -12,50 +12,60 @@ import {
   MaterialUIIcon,
   ReactIcon,
   ReduxIcon,
-} from '../../assets/svg/logos'
-import indexEqualColumnStyle from '../../styles/components/indexEqualColumnStyle'
-import Avatar from 'material-ui/Avatar'
-import Divider from 'material-ui/Divider'
+  NodeIcon,
+  FirebaseIcon
+} from '../../assets/svg/logos';
+import indexEqualColumnStyle from '../../styles/components/indexEqualColumnStyle';
+import Avatar from 'material-ui/Avatar';
+import Divider from 'material-ui/Divider';
 
 const logosList = {
   React: {
     icon: ReactIcon,
-    bgColor: 'blue',
+    bgColor: 'blue'
   },
   Redux: {
     icon: ReduxIcon,
-    bgColor: 'blue',
+    bgColor: 'blue'
   },
   GraphQL: {
     icon: GraphQLIcon,
-    bgColor: 'rose',
+    bgColor: 'rose'
   },
   Babel: {
     icon: BabelIcon,
-    bgColor: 'red',
+    bgColor: 'red'
   },
   Gatsby: {
     icon: GatsbyIcon,
-    bgColor: 'purple',
+    bgColor: 'purple'
   },
   Markdown: {
     icon: MarkdownIcon,
-    bgColor: 'white',
+    bgColor: 'white'
   },
   MaterialUI: {
     icon: MaterialUIIcon,
-    bgColor: 'black',
+    bgColor: 'black'
   },
-}
+  Node: {
+    icon: NodeIcon,
+    bgColor: 'green'
+  },
+  Firebase: {
+    icon: FirebaseIcon,
+    bgColor: 'yellow'
+  }
+};
 
 const generateTagAvatar = (tag, tagFillColor) => {
-  let tagComponent = logosList[tag]
-  return tagComponent ? <tagComponent.icon fill={tagFillColor} /> : null
-}
+  let tagComponent = logosList[tag];
+  return tagComponent ? <tagComponent.icon fill={tagFillColor} /> : null;
+};
 
 const EqualColumn = props => {
-  const { posts, classes } = props
-  const tagFillColor = ''
+  const { posts, classes } = props;
+  const tagFillColor = '';
   return (
     <Grid container className={classes.cardsGrid}>
       {posts.map(post => {
@@ -94,10 +104,10 @@ const EqualColumn = props => {
               </Grid>
             </PostItemCard>
           </ItemGrid>
-        )
+        );
       })}
     </Grid>
-  )
-}
+  );
+};
 
-export default withStyles(indexEqualColumnStyle)(EqualColumn)
+export default withStyles(indexEqualColumnStyle)(EqualColumn);
