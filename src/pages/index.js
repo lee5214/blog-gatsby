@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import TimeLine from '../components/Index/TimeLine'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import EqualColumn from '../components/Index/EqualColumn';
 import {
   BabelIcon,
   GatsbyIcon,
@@ -8,38 +8,38 @@ import {
   MarkdownIcon,
   MaterialUIIcon,
   ReactIcon,
-  ReduxIcon,
-} from '../assets/svg/logos'
+  ReduxIcon
+} from '../assets/svg/logos';
 
 const logosList = {
   React: {
     icon: ReactIcon,
-    bgColor: 'blue',
+    bgColor: 'blue'
   },
   Redux: {
     icon: ReduxIcon,
-    bgColor: 'blue',
+    bgColor: 'blue'
   },
   GraphQL: {
     icon: GraphQLIcon,
-    bgColor: 'rose',
+    bgColor: 'rose'
   },
   Babel: {
     icon: BabelIcon,
-    bgColor: 'red',
+    bgColor: 'red'
   },
   Gatsby: {
     icon: GatsbyIcon,
-    bgColor: 'purple',
+    bgColor: 'purple'
   },
   Markdown: {
     icon: MarkdownIcon,
-    bgColor: 'white',
+    bgColor: 'white'
   },
   MaterialUI: {
     icon: MaterialUIIcon,
-    bgColor: 'black',
-  },
+    bgColor: 'black'
+  }
 };
 
 /**
@@ -51,7 +51,7 @@ const logosList = {
 class IndexPage extends Component {
   generateTagAvatar = (tag, tagFillColor) => {
     let tagComponent = logosList[tag];
-    return tagComponent ? <tagComponent.icon fill={tagFillColor} /> : null
+    return tagComponent ? <tagComponent.icon fill={tagFillColor} /> : null;
   };
 
   render() {
@@ -59,7 +59,7 @@ class IndexPage extends Component {
     const { edges: posts } = data.allContentfulPost;
     const tagFillColor = '';
 
-    return <TimeLine posts={posts} />
+    return <EqualColumn posts={posts} />;
   }
 }
 
@@ -85,8 +85,8 @@ export const listQuery = graphql`
 `;
 
 IndexPage.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired
   //classes : PropTypes.object.isRequired,
 };
 
-export default IndexPage
+export default IndexPage;
