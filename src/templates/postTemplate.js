@@ -11,7 +11,7 @@ const PostTemplate = ({ data, classes }) => {
         <h1 className={classes.title}>{post.title}</h1>
         <p>{moment(post.date).format('MMMM DD YYYY')}</p>
         <div className={classes.tagContainer}>
-          {post.tags.map(tag => (
+          {post.tags&&post.tags.map(tag => (
             <span className={classes.tag} key={post.id + tag}>
               {tag}
             </span>

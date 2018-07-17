@@ -68,7 +68,7 @@ const EqualColumn = props => {
   const tagFillColor = '';
   return (
     <Grid container className={classes.cardsGrid}>
-      {posts.map(post => {
+      {posts.length&&posts.map(post => {
         return (
           <ItemGrid xs={12} sm={12} md={12} lg={6} key={post.node.id}>
             <PostItemCard
@@ -83,7 +83,7 @@ const EqualColumn = props => {
                 <Grid item xs={12}>
                   <Grid container className={classes.tagGrid}>
                     {/*<div className={ classes.row }>*/}
-                    {post.node.tags.map(tag => (
+                    {post.node.tags&&post.node.tags.map(tag => (
                       <Grid item key={`${post.node.id}${tag}`}>
                         <Avatar alt={tag} className={classes.tagAvatar}>
                           {generateTagAvatar(tag, tagFillColor)}
