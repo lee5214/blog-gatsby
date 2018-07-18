@@ -31,8 +31,8 @@ module.exports = {
 				fonts : [
 					`Montserrat:300,400,500`,
 					`Roboto:300,400,500`,
-					`Audiowide`,
-					`Unica One`,
+					//`Audiowide`,
+					//`Unica One`,
 				],
 			},
 		},
@@ -63,6 +63,5 @@ module.exports = {
 			},
 		},
 		`gatsby-plugin-netlify`,
-
 	],
 };

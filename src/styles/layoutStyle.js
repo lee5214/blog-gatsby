@@ -27,7 +27,7 @@ const layoutStyle = theme => ({
     width: '100%',
     overflow: 'scroll',
     flexGrow: 1,
-    backgroundColor: 'black' //theme.palette.primaryColor
+    backgroundColor: 'white' //theme.palette.primaryColor
     // padding: theme.spacing.unit * 3
   },
   tabBadge: {

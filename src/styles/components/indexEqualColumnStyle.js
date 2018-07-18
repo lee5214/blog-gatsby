@@ -1,4 +1,4 @@
-const indexEqualColumnStyle = theme => ({
+const indexEqualColumnStyle = () => ({
   cardsGrid: {},
   tagGrid: {
     display: 'flex',
