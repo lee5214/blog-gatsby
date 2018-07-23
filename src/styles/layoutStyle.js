@@ -10,7 +10,8 @@ const layoutStyle = theme => ({
     borderRadius: 12
   },
   appBar: {
-    color: 'white',
+    backgroundColor:'white',
+
     position: 'absolute',
     marginLeft: drawerWidth,
     [theme.breakpoints.up('md')]: {
@@ -23,11 +24,12 @@ const layoutStyle = theme => ({
     }
   },
   mainContent: {
-    marginTop: 140,
+    marginTop: 100,
+    paddingTop:50,
     width: '100%',
     overflow: 'scroll',
     flexGrow: 1,
-    backgroundColor: 'white' //theme.palette.primaryColor
+    backgroundColor: '#161719' //theme.palette.primaryColor
     // padding: theme.spacing.unit * 3
   },
   tabBadge: {
@@ -40,7 +42,7 @@ const layoutStyle = theme => ({
       right: -20,
       backgroundColor: 'transparent',
       borderRadius: 0,
-      color: 'white'
+      color: 'black'
     }
   },
   tabIcon: {

@@ -47,7 +47,9 @@ template {
 }
 
 a {
+    color: #64f364;
     background-color: transparent;
+    padding:2px;
     -webkit-text-decoration-skip: objects;
 }
 

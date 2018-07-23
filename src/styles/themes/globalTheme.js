@@ -14,7 +14,7 @@ const muiTheme = createMuiTheme({
       dark: '#000000'
     },
     secondary: {
-      main: '#ff0000'
+      main: '#000000'
     }
   },
   overrides: {

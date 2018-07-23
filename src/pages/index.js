@@ -48,6 +48,7 @@ const logosList = {
  * this function is for generating tag avatar dynamically based on tag name
  * syntax <logoList[tag].icon is not allowed, so I abstracted this function.
  */
+
 class IndexPage extends Component {
   generateTagAvatar = (tag, tagFillColor) => {
     let tagComponent = logosList[tag];
@@ -58,8 +59,9 @@ class IndexPage extends Component {
     const { data, classes } = this.props;
     const { edges: posts } = data.allContentfulPost;
     const tagFillColor = '';
-
-    return <EqualColumn posts={posts} />;
+    return (
+    <EqualColumn posts={posts} />
+    )
   }
 }
 

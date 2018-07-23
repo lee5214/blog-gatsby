@@ -8,34 +8,34 @@ import {
   primaryColor,
   successColor,
   transition,
-  warningColor,
-} from '../styles'
+  warningColor
+} from '../styles';
 
 const sidebarContentStyle = theme => ({
   buttonText: {
     margin: '10px, 0',
-    padding: 0,
+    padding: 0
   },
   buttonTextPrimary: {
-    color: 'white',
-    fontWeight: 400,
-    textAlign: 'center',
-    fontFamily: 'Montserrat',
+    color: '#505050',
+    fontWeight: 600,
+    textAlign: 'left',
+    fontFamily: 'Montserrat'
   },
   buttonTextSecondary: {
     display: 'block',
     fontWeight: 400,
     textAlign: 'center',
-    fontFamily: 'Roboto',
+    fontFamily: 'Roboto'
   },
   headerDivider: {
     width: '60%',
     background: 'white',
-    margin: '0 auto',
+    margin: '0 auto'
   },
   sidebarListContainer: {
     maxHeight: '100%',
-    overflow: 'scroll',
+    overflow: 'scroll'
   },
   sidebarList: {
     height: 'auto',
@@ -43,7 +43,7 @@ const sidebarContentStyle = theme => ({
     display: 'flex',
     flexGrow: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   drawerPaper: {
     border: 'none',
@@ -58,7 +58,7 @@ const sidebarContentStyle = theme => ({
     [theme.breakpoints.up('md')]: {
       width: drawerWidth,
       position: 'fixed',
-      height: '100%',
+      height: '100%'
     },
     [theme.breakpoints.down('sm')]: {
       width: drawerWidth,
@@ -77,8 +77,8 @@ const sidebarContentStyle = theme => ({
       paddingRight: '0px',
       paddingLeft: '0',
       transform: `translate3d(${drawerWidth}px, 0, 0)`,
-      ...transition,
-    },
+      ...transition
+    }
   },
   logo: {
     marginTop: 40,
@@ -89,39 +89,34 @@ const sidebarContentStyle = theme => ({
     zIndex: '4',
     transition: '.25s ease-in-out .25s',
     '&:hover': {
-      transform: 'rotate(-30deg)',
-    },
+      transform: 'rotate(-30deg)'
+    }
   },
   logoLink: {
     ...defaultFont,
     textTransform: 'uppercase',
-    padding: '5px 0',
     display: 'block',
     fontSize: '18px',
     textAlign: 'left',
     fontWeight: '400',
     lineHeight: '30px',
     textDecoration: 'none',
-    backgroundColor: 'transparent',
+    backgroundColor: 'black',
     '&,&:hover': {
-      color: '#FFFFFF',
-    },
+      color: '#FFFFFF'
+    }
   },
   logoImageContainer: {
-    margin: '0 auto',
-    width: '30px',
-    display: 'inline-block',
-    maxHeight: '30px',
-    marginLeft: '10px',
-    marginRight: '15px',
+    width: 30,
+    height: 30,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',
+    margin:10
   },
-  logoImg: {
-    transform: 'translateY(-50%)',
-    top: '50%',
-    width: '35px',
-    position: 'absolute',
-    verticalAlign: 'middle',
-    border: '0',
+  logoImage: {
+    margin: 0
   },
   background: {
     position: 'absolute',
@@ -141,8 +136,8 @@ const sidebarContentStyle = theme => ({
       content: '',
       display: 'block',
       background: '#000',
-      opacity: '.8',
-    },
+      opacity: '.8'
+    }
   },
   list: {
     marginTop: '20px',
@@ -150,12 +145,12 @@ const sidebarContentStyle = theme => ({
     paddingTop: '0',
     paddingBottom: '0',
     marginBottom: '0',
-    listStyle: 'none',
+    listStyle: 'none'
   },
   item: {
     position: 'relative',
     display: 'block',
-    textDecoration: 'none',
+    textDecoration: 'none'
   },
   itemLink: {
     color: 'rgba(0, 0, 0, 1)',
@@ -167,7 +162,7 @@ const sidebarContentStyle = theme => ({
     position: 'relative',
     display: 'block',
     backgroundColor: 'transparent',
-    ...defaultFont,
+    ...defaultFont
     /*'& :hover' : {
 			backgroundColor : 'rgba(255, 255, 255, 0.24) !important',
 		}*/
@@ -179,24 +174,24 @@ const sidebarContentStyle = theme => ({
     marginRight: '15px',
     textAlign: 'center',
     verticalAlign: 'middle',
-    color: 'rgba(255, 255, 255, 0.8)',
+    color: 'rgba(255, 255, 255, 0.8)'
   },
   itemText: {
     ...defaultFont,
     lineHeight: '30px',
     fontSize: '14px',
-    color: '#FFFFFF',
+    color: '#FFFFFF'
   },
   whiteFont: {
-    color: '#FFFFFF',
+    color: '#FFFFFF'
   },
   purple: {
     backgroundColor: primaryColor,
     ...primaryBoxShadow,
     '&:hover': {
       backgroundColor: primaryColor,
-      ...primaryBoxShadow,
-    },
+      ...primaryBoxShadow
+    }
   },
   blue: {
     backgroundColor: infoColor,
@@ -205,8 +200,8 @@ const sidebarContentStyle = theme => ({
     '&:hover': {
       backgroundColor: infoColor,
       boxShadow:
-        '0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)',
-    },
+        '0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)'
+    }
   },
   green: {
     backgroundColor: successColor,
@@ -215,8 +210,8 @@ const sidebarContentStyle = theme => ({
     '&:hover': {
       backgroundColor: successColor,
       boxShadow:
-        '0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)',
-    },
+        '0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)'
+    }
   },
   orange: {
     backgroundColor: warningColor,
@@ -225,8 +220,8 @@ const sidebarContentStyle = theme => ({
     '&:hover': {
       backgroundColor: warningColor,
       boxShadow:
-        '0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)',
-    },
+        '0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)'
+    }
   },
   red: {
     backgroundColor: dangerColor,
@@ -235,8 +230,8 @@ const sidebarContentStyle = theme => ({
     '&:hover': {
       backgroundColor: dangerColor,
       boxShadow:
-        '0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)',
-    },
+        '0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)'
+    }
   },
   sidebarWrapper: {
     position: 'relative',
@@ -244,8 +239,8 @@ const sidebarContentStyle = theme => ({
     overflow: 'auto',
     width: '260px',
     zIndex: '4',
-    overflowScrolling: 'touch',
-  },
-})
+    overflowScrolling: 'touch'
+  }
+});
 
-export default sidebarContentStyle
+export default sidebarContentStyle;

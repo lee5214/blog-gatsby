@@ -67,22 +67,7 @@ class Layout extends Component {
           </Helmet>
 
           <AppBar className={classes.appBar}>
-            <Toolbar>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                onClick={this.handleDrawerToggle}
-                className={classes.navIconHide}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Typography variant="headline" color="inherit" noWrap>
-                {this.props.location.pathname
-                  .replace('/', '')
-                  .replace(/-/g, ' ')}
-              </Typography>
-            </Toolbar>
-            <Divider style={{ background: 'white' }} />
+
             <Tabs
               centered
               value={this.state.tabNum}

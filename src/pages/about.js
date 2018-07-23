@@ -1,11 +1,16 @@
-import React from 'react'
-import MessageWall from '../components/Wall/MessageWall'
+import React, { Component } from 'react';
+import MessageWall from '../components/Wall/MessageWall';
 
-const About = () => {
-  return (
-    <div>
-      { /*<MessageWall />*/ }
-    </div>
-  )
-};
-export default About
+
+class About extends Component {
+
+
+  render() {
+    return (
+      <div style={{color:'white'}}>
+        LinkedIn : <a href={'https://linkedin.com/in/lee5214.com'}>Lee5214</a>
+      </div>
+    );
+  }
+}
+export default About;

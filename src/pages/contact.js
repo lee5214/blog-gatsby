@@ -36,11 +36,12 @@ export default class Contact extends React.Component {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          margin: 100,
+          padding:100
         }}
       >
-        <p>Email: cong-li@cong-li.com</p>
-        <p>Or send a message here</p>
+        <p>To: cong-li@cong-li.com</p>
         <form
           name="contact"
           method="post"
