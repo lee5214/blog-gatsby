@@ -67,7 +67,7 @@ const postItemCardStyle = theme => ({
     lineHeight: '1',
     color: 'black',
     background: 'white',
-    padding: '.1rem .4rem',
+    padding: '0 .4rem',
     margin: '.1rem .4rem'
   },
   cardActions: {
@@ -81,8 +81,7 @@ const postItemCardStyle = theme => ({
     fontFamily: 'Montserrat',
     background: 'black',
     color: 'white',
-    padding: '4px',
-
+    padding: '5px 20px',
     textAlign: 'center',
     [theme.breakpoints.up('lg')]: {
       fontSize: '1rem'

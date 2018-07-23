@@ -34,9 +34,10 @@ const postTemplateStyle = {
     flexWrap: 'wrap'
   },
   tag: {
-    background: '#72fffa',
-    padding: '0  .5rem',
-    marginRight: '1rem'
+    fontSize:'14px',
+    background: '#004e5d',
+    padding: '.2rem .5rem',
+    margin: '.3rem .5rem'
   }
 };
 

@@ -24,12 +24,10 @@ const layoutStyle = theme => ({
     }
   },
   mainContent: {
-    marginTop: 100,
-    paddingTop:50,
     width: '100%',
     overflow: 'scroll',
     flexGrow: 1,
-    backgroundColor: '#161719' //theme.palette.primaryColor
+    backgroundColor: '#f2fffc' //theme.palette.primaryColor
     // padding: theme.spacing.unit * 3
   },
   tabBadge: {
@@ -54,9 +52,9 @@ const layoutStyle = theme => ({
     }
   },
   postBlock: {
-    margin: '0 auto',
+    margin: '100px auto 0',
     maxWidth: '960px',
-    padding: '1rem 0'
+    padding: '1rem 0 0'
   }
 });
 

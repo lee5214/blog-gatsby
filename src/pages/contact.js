@@ -41,7 +41,7 @@ export default class Contact extends React.Component {
           padding:100
         }}
       >
-        <p>To: cong-li@cong-li.com</p>
+        <p>Feel free to send me a message if you got some questions</p>
         <form
           name="contact"
           method="post"
