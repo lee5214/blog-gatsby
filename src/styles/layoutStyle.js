@@ -10,8 +10,8 @@ const layoutStyle = theme => ({
     borderRadius: 12
   },
   appBar: {
+    zIndex:9999,
     backgroundColor:'white',
-
     position: 'absolute',
     marginLeft: drawerWidth,
     [theme.breakpoints.up('md')]: {

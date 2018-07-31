@@ -1,7 +1,7 @@
 // import { primaryColor } from './styles'
 const postTemplateStyle = {
   container: {
-    backgroundColor: 'black',
+    backgroundColor: '#313131',
     color: 'white',
     padding: '1rem 1rem 0',
   },
@@ -13,7 +13,9 @@ const postTemplateStyle = {
     fontWeight: 400
   },
   title: {
-    fontFamily: 'audiowide'
+    fontFamily: 'Montserrat',
+    fontWeight:'500',
+    textTransform:'capitalize'
   },
   postContentWrapper: {
     fontFamily: 'roboto',
@@ -35,7 +37,7 @@ const postTemplateStyle = {
   },
   tag: {
     fontSize:'14px',
-    background: '#004e5d',
+    background: '#007c94',
     padding: '.2rem .5rem',
     margin: '.3rem .5rem'
   }

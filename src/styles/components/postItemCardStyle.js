@@ -16,7 +16,10 @@ import {
 
 const postItemCardStyle = theme => ({
   cardContainer: {
-    overflow: 'visible'
+    overflow: 'visible',
+    '&:hover':{
+      boxShadow: '0 4px 20px 0px rgba(0,0,0, 0.16)'
+    }
   },
   card,
   cardHeader: {

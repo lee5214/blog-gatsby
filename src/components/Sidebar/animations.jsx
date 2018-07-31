@@ -62,6 +62,6 @@ const upDownWideAnimation = keyframes`
 
 
 export const waveAnimation = css`
-  animation: ${wave} 20s linear infinite alternate;
+  animation: ${wave} 10s linear infinite alternate;
 `;
 
