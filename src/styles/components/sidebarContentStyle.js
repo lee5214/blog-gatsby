@@ -18,15 +18,15 @@ const sidebarContentStyle = theme => ({
   },
   buttonTextPrimary: {
     color: '#505050',
-    fontWeight: 600,
+    fontWeight: 500,
     textAlign: 'left',
     fontFamily: 'Montserrat'
   },
   buttonTextSecondary: {
-    display: 'block',
+    display: '#505050',
     fontWeight: 400,
-    textAlign: 'center',
-    fontFamily: 'Roboto'
+    //textAlign: 'center',
+    fontFamily: 'Montserrat'
   },
   headerDivider: {
     width: '60%',
@@ -162,7 +162,7 @@ const sidebarContentStyle = theme => ({
     position: 'relative',
     display: 'block',
     backgroundColor: 'transparent',
-    ...defaultFont
+    ...defaultFont,
     /*'& :hover' : {
 			backgroundColor : 'rgba(255, 255, 255, 0.24) !important',
 		}*/
