@@ -17,3 +17,4 @@ function ItemGrid ({...props}) {
 }
 
 export default withStyles (style) (ItemGrid);
+
